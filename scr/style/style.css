@@ -30,14 +30,15 @@ nav {
 }
 
 nav .logo {
-    border-radius: 4px;
+    
     display: flex;
     align-items: center;
 }
 
 nav .logo img {
-    height: 30px; /* Define um tamanho fixo */
+    height: 35px; /* Define um tamanho fixo */
     width: auto;
+    border-radius: 15px;
 }
 
 nav ul {
