@@ -1,0 +1,217 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f0f0f0;
+    color: #333;
+    padding-top: 40px;
+}
+
+/* Header e Navegação */
+header {
+    background: rgba(51, 51, 51, 0.8); /* Barra translúcida */
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed; /* Adicione essa linha */
+    top: 0;          /* Posiciona inicialmente no topo */
+    width: 100%;     /* Garante que o header ocupe toda a largura */
+    transition: top 0.3s ease; /* Facilita a animação do top */
+    z-index: 10;     /* Garante que fique acima de outros elementos */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 35px; /* Define um tamanho fixo */
+    width: auto;
+    border-radius: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+section {
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+section h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+section p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Container para cards nas seções, se necessário */
+.section-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#intro p {
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.15em;
+    line-height: 1.8;
+    padding: 0 10px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+footer p {
+    margin-bottom: 5px;
+}
+
+/* Estilização do Quiz */
+.quiz {
+    background: #fff;                    /* Fundo branco, igual aos cards */
+    border: 1px solid #ddd;               /* Borda fina e clara */
+    border-radius: 8px;                   /* Bordas arredondadas */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);  /* Sombra leve */
+    padding: 20px;                        /* Espaçamento interno similar */
+    margin: 20px auto;                    /* Espaço externo e centralizado */
+    max-width: 1200px;                     /* Pode ajustar para se adequar ao layout desejado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.quiz h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.quiz .question {
+    margin-bottom: 15px;
+}
+
+.quiz .question h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.quiz .options {
+    list-style: none;
+    padding: 0;
+}
+
+.quiz .options li {
+    margin-bottom: 10px;
+}
+
+.quiz .options li input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Botão de submissão do quiz */
+.quiz button {
+    background: #673AB7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.quiz button:hover {
+    background: #5a2b90;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    background: #673AB7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.button-container button:hover {
+    background: #5a2b90;
+}
+
+/* Garante que o <a> dentro do botão ocupe todo o espaço e mantenha a estilização */
+.button-container button a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.btn-next a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}

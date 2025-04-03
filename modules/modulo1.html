@@ -3,9 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introdução ao HTML</title>
+    <title>Introdução ao Desenvolvimento Web</title>
+    <script src="/scr/script/script.js" defer></script>
+    <script src="/scr/script/quiz.js" defer></script>
+    <link rel="stylesheet" href="/scr/style/style_modules.css">
 </head>
-<body>
-    
+<body>    
+    <header>
+        <nav>
+            <div class="logo"><img src="/scr/img/logo.png" alt="Logo"></div>
+            <ul>
+                <li><a href="/Index.html#about">Sobre</a></li>
+                <li><a href="/Index.html#tools">Ferramentas</a></li>
+                <li><a href="/Index.html#modulos">Modulos</a></li>
+                <li><a href="/Index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1>Módulo 1: Introdução ao Desenvolvimento Web</h1>
+        <br>
+        <p> 
+            Bem-vindo ao Curso de Desenvolvimento Web! <br>
+            <br>
+            Nesse curso, você aprenderá os conceitos essenciais de HTML, CSS e JavaScript, as três tecnologias fundamentais para a construção de sites modernos e interativos. <br> O desenvolvimento web é uma área em constante evolução, e com o conhecimento certo, você poderá criar páginas incríveis. <br>
+            <br>
+            Este curso é voltado para iniciantes e não exige experiência prévia em programação. <br>
+            <br>
+            O que você vai aprender? <br>
+            Durante o curso, você entenderá os fundamentos do desenvolvimento web, incluindo: <br>
+            ✅ A estrutura básica de um site. <br>
+            ✅ O funcionamento das páginas web. <br>
+            ✅ Como as três tecnologias principais (HTML, CSS e JavaScript) trabalham juntas. <br>
+
+            O desenvolvimento web envolve a criação e manutenção de sites, abrangendo três áreas principais: <br>
+            <br>
+            HTML → Responsável pela estrutura e organização do conteúdo. <br>
+            <br>
+            CSS → Define o design, a aparência e o estilo da página. <br>
+            <br>
+            JavaScript → Adiciona interatividade e dinamismo. <br>
+            <br>
+            Além disso, o desenvolvimento web é dividido em duas áreas: <br>
+            <br>
+            🖥 Front-end: Parte visível do site, com a qual os usuários interagem. <br>
+            ⚙️ Back-end: Responsável pela lógica do servidor e pelo armazenamento de dados. <br>
+            <br>
+            Neste curso, focaremos no front-end, ensinando você a criar páginas web atrativas e funcionais utilizando HTML, CSS e JavaScript. <br>
+            <br>
+            O que são HTML, CSS e JavaScript? <br>
+            Para construir um site, utilizamos três linguagens principais: <br>
+            <br>
+            🔹 HTML (HyperText Markup Language) → Define a estrutura da página, organizando elementos como textos, imagens e links. <br>
+            <br>
+            🔹 CSS (Cascading Style Sheets) → Controla o design e a aparência, incluindo cores, fontes, tamanhos e layout. <br>
+            <br>
+            🔹 JavaScript → Torna as páginas interativas, permitindo animações, respostas a eventos do usuário e manipulação do conteúdo em tempo real. <br>
+            <br>
+            Como essas tecnologias se complementam?
+            Para entender melhor, imagine que você está construindo uma casa: <br>
+            <br>
+            🏠 HTML → Define as paredes e a estrutura. <br>
+            🎨 CSS → Pinta as paredes e adiciona a decoração. <br>
+            ⚡ JavaScript → Instala luzes automáticas e portas que se abrem sozinhas. <br>
+            <br>
+            Essas três tecnologias juntas formam a base do desenvolvimento web moderno! 🚀
+        </p>
+        
+    </section>
+
+    <div class="quiz">
+        <h2>Quiz</h2>
+        <div class="question" data-correct="HTML">
+            <p>1. Qual das tecnologias abaixo é responsável pela estrutura de um site?</p>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input type="radio" name="q1" value="HTML" />
+                        HTML
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q1" value="CSS" />
+                        CSS
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q1" value="JavaScript" />
+                        JavaScript
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="question" data-correct="Aplica estilos e formatação ao site.">
+            <p>2. O que o CSS faz em uma página web?</p>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input type="radio" name="q2" value="Adiciona interatividade e efeitos dinâmicos." />
+                        Adiciona interatividade e efeitos dinâmicos.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q2" value="Define a estrutura da página." />
+                        Define a estrutura da página.
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q2" value="Aplica estilos e formatação ao site." />
+                        Aplica estilos e formatação ao site.
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="question" data-correct="JavaScript">
+            <p>3. Qual linguagem é usada para tornar uma página interativa?</p>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input type="radio" name="q3" value="HTML" />
+                        HTML
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q3" value="CSS" />
+                        CSS
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q3" value="JavaScript" />
+                        JavaScript
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <button class="btn-submit" type="button">Enviar Quiz</button>
+        <button class="btn-next"><a href="./modulo2.html" rel="noopener noreferrer">Próximo</a></button>
+        <div class="quiz-result"></div>
+    </div>
 </body>
+<footer>
+    <p>&copy; 2023 Curso Iniciando na Programação. Todos os direitos reservados.</p>
+    <p>Desenvolvido por [Nome Do Grupo]</p>
+</footer>
 </html>
