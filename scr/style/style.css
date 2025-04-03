@@ -1,0 +1,205 @@
+/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background: #f0f0f0;
+    color: #333;
+}
+
+/* Header e Navegação */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav ul li {
+    margin-left: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* Seção Main com imagem de fundo e conteúdo sobreposto */
+#main {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    overflow: hidden;
+}
+#main .main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#main .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+#main .main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+#main .main-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+#main .main-content p {
+    font-size: 1.2em;
+}
+
+/* Seções About, Tools e Modulos - transformadas em cards centralizados */
+section {
+    padding: 40px 20px;
+    margin: 40px auto;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+section h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+section p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* Container para cards nas seções, se necessário */
+.section-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    flex: 1 1 300px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#about p {
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.15em;
+    line-height: 1.8;
+    padding: 0 10px;
+}
+
+/* Estilização especial da seção de Tools – similar à de Módulos */
+#tools ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+#tools ul li {
+    flex: 1 1 280px;
+}
+#tools ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+#tools ul li a:hover {
+    background: #ffd700;
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+/* Estilização especial da seção de Modulos */
+#modulos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+#modulos ul li {
+    flex: 1 1 280px;
+}
+#modulos ul li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #333;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+#modulos ul li a:hover {
+    background: #ffd700;
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+footer p {
+    margin-bottom: 5px;
+}
