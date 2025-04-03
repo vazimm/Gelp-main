@@ -13,19 +13,33 @@ body {
 
 /* Header e Navegação */
 header {
-    background: #333;
+    background: rgba(51, 51, 51, 0.8); /* Barra translúcida */
     color: #fff;
     padding: 10px 20px;
+    position: fixed; /* Adicione essa linha */
+    top: 0;          /* Posiciona inicialmente no topo */
+    width: 100%;     /* Garante que o header ocupe toda a largura */
+    transition: top 0.3s ease; /* Facilita a animação do top */
+    z-index: 10;     /* Garante que fique acima de outros elementos */
 }
+
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 nav .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
 }
+
+nav .logo img {
+    height: 30px; /* Define um tamanho fixo */
+    width: auto;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -44,11 +58,26 @@ nav ul li a:hover {
 
 /* Seção Main com imagem de fundo e conteúdo sobreposto */
 #main {
+    margin-top: 60px;
     position: relative;
     height: 60vh;
     width: 100%;
     overflow: hidden;
 }
+
+#main .main-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    z-index: 2;
+}
+
 #main .main-image {
     position: absolute;
     top: 0;
@@ -158,7 +187,7 @@ section p {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 #tools ul li a:hover {
-    background: #ffd700;
+    background: #673AB7;
     transform: translateY(-3px);
     color: #fff;
 }
@@ -188,7 +217,7 @@ section p {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 #modulos ul li a:hover {
-    background: #ffd700;
+    background: #673AB7;
     transform: translateY(-3px);
     color: #fff;
 }
