@@ -109,6 +109,43 @@ section p {
     padding: 0 10px;
 }
 
+/* Estilização dos cards de explicação */
+.explanation-box .explanation {
+    padding-left: 20px; /* Ajuste o valor conforme necessário */
+}
+
+/* Estilo para code-box (usando &nbsp; para espaçamento) */
+.code-box {
+    background: #f7f7f7;            /* Fundo claro */
+    border: 1px solid #ddd;         /* Borda sutil */
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    font-family: "Courier New", monospace;
+    font-size: 0.95em;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+/* Estilo para code-box-semantico (usando <pre> para preservar formatação) */
+.code-box-semantico {
+    background: #272822;            /* Fundo escuro */
+    color: #f8f8f2;                 /* Cor do texto */
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 15px;
+    margin: 20px 0;
+    font-family: "Courier New", monospace;
+    font-size: 0.95em;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.code-box-semantico pre {
+    white-space: pre-wrap;  /* Permite quebrar linha se necessário */
+    margin: 0;
+}
+
 /* Footer */
 footer {
     background: #333;

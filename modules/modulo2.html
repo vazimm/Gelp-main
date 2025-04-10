@@ -4,8 +4,419 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamentos do HTML</title>
+    <script src="/src/script/script.js" defer></script>
+    <script src="/src/script/quiz.js" defer></script>
+    <link rel="stylesheet" href="/src/style/style_modules.css">
 </head>
-<body>
-    
+<body>    
+    <header>
+        <nav>
+            <div class="logo"><img src="/src/img/logo.png" alt="Logo"></div>
+            <ul>
+                <li><a href="/Index.html#about">Sobre</a></li>
+                <li><a href="/Index.html#tools">Ferramentas</a></li>
+                <li><a href="/Index.html#modulos">Modulos</a></li>
+                <li><a href="/Index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <h1>Estrutura Básica de um Documento HTML</h1>
+        <br>
+        <p> 
+            Todo documento HTML possui uma estrutura mínima que define o conteúdo e sua organização.
+            Essa estrutura básica é composta por elementos que indicam o início e o fim do documento, o cabeçalho, o corpo e outras informações essenciais. 
+            Abaixo, um exemplo de estrutura básica:
+            <div class="code-box">
+                    <code>
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html&gt;<br>
+                            &nbsp;&nbsp;&lt;head&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Título da Página&lt;/title&gt;<br>
+                            &nbsp;&nbsp;&lt;/head&gt;<br>
+                            &nbsp;&nbsp;&lt;body&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Bem-vindo ao Curso de Desenvolvimento Web!&lt;/h1&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Este é um exemplo básico de documento HTML.&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;a href="https://www.exemplo.com"&gt;Clique aqui para visitar um site exemplo&lt;/a&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="imagem-exemplo.jpg" alt="Descrição da imagem"&gt;<br>
+                            &nbsp;&nbsp;&lt;/body&gt;<br>
+                        &lt;/html&gt;
+                    </code>
+             </div>
+            <h1>Explicação dos principais elementos: <br></h1>
+            <br>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li><strong>&lt;!DOCTYPE html&gt;</strong>: Declaração que informa ao navegador que o documento é um HTML5.</li>
+                    <li><strong>&lt;html&gt;</strong>: Elemento raiz que envolve todo o conteúdo da página.</li>
+                    <li><strong>&lt;head&gt;</strong>: Contém informações sobre o documento, como título e metadados.</li>
+                    <li><strong>&lt;meta charset="UTF-8"&gt;</strong>: Define a codificação de caracteres do documento.</li>
+                    <li><strong>&lt;title&gt;</strong>: Define o título da página, exibido na aba do navegador.</li>
+                    <li><strong>&lt;body&gt;</strong>: Contém o conteúdo visível da página, como textos, imagens e links.</li>
+                </ul>
+            </div>
+            <br>
+            <h1>Principais Tags Utilizadas</h1>
+            <br>
+            <h3>Cabeçalhos (&lt;h1&gt; a &lt;h6&gt;) : </h3>
+            Os cabeçalhos são usados para definir títulos e subtítulos em diferentes níveis. <br>
+            Existem seis níveis de cabeçalhos, do &lt;h1&gt; (mais importante) ao &lt;h6&gt; (menos importante).
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;h1&gt;Título Principal&lt;/h1&gt;<br>
+                    &lt;h2&gt;Subtítulo&lt;/h2&gt;<br>
+                    &lt;h3&gt;Subtítulo Secundário&lt;/h3&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Parágrafos (&lt;p&gt;):</h3>
+            Os parágrafos são usados para agrupar texto em blocos. Eles ajudam a organizar o conteúdo e a torná-lo mais legível.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Links (&lt;a&gt;):</h3>
+            Os links são usados para criar hyperlinks que direcionam o usuário para outras páginas ou sites. O atributo href define o destino do link.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;a href="https://www.exemplo.com"&gt;Clique aqui&lt;/a&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Imagens (&lt;img&gt;):</h3>
+            As imagens são inseridas na página usando a tag &lt;img&gt;. O atributo src define o caminho da imagem, enquanto o atributo alt fornece uma descrição alternativa.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;img src="imagem-exemplo.jpg" alt="Descrição da imagem"&gt;
+                </code>
+            </div>
+            <br>
+            <h1>Tags Semanticâs</h1>
+            <br>
+            <h3>Header:</h3>
+            A tag &lt;header&gt; é usada para definir o cabeçalho de uma página ou seção. Geralmente contém o logo e a navegação principal (Barra de navegação).
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;header&gt;<br>
+                        &nbsp;&nbsp;&lt;nav&gt;<br>
+                        &nbsp;&nbsp;&nbsp; &lt;img src="imagem-exemplo.jpg" alt="Descrição da imagem"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;<br>
+                        &nbsp;&nbsp;&lt;/nav&gt;<br>
+                    &lt;/header&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Main:</h3>
+            A tag &lt;main&gt; é usada para definir o conteúdo principal de uma página. É onde o conteúdo mais relevante deve ser colocado.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;main&gt;<br>
+                        &nbsp;&nbsp;&lt;h1&gt;Bem-vindo ao Curso de Desenvolvimento Web!&lt;/h1&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;Este é um exemplo básico de documento HTML.&lt;/p&gt;<br>
+                    &lt;/main&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Nav:</h3>
+            A tag &lt;nav&gt; é usada para definir uma seção de navegação em uma página. Geralmente contém links para outras páginas ou seções do site.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;nav&gt;<br>
+                        &nbsp;&nbsp;&lt;ul&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;<br>
+                        &nbsp;&nbsp;&lt;/ul&gt;<br>
+                    &lt;/nav&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Section:</h3>
+            A tag &lt;section&gt; é usada para definir uma seção independente de conteúdo dentro de um documento. É útil para agrupar conteúdo relacionado.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;section&gt;<br>
+                        &nbsp;&nbsp;&lt;h2&gt;Título da Seção&lt;/h2&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;Conteúdo da seção.&lt;/p&gt;<br>
+                    &lt;/section&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Footer:</h3>
+            A tag &lt;footer&gt; é usada para definir o rodapé de uma página ou seção. Geralmente contém informações de copyright, links de contato e outras informações relevantes.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;footer&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;&copy; 2023 Curso Iniciando na Programação. Todos os direitos reservados.&lt;/p&gt;<br>
+                        &nbsp;&nbsp;&lt;p&gt;Desenvolvido por [Nome Do Grupo]&lt;/p&gt;<br>
+                    &lt;/footer&gt;
+                </code>
+            </div>
+            <br>
+            <h1>Boas Pratícas para um Código HTML limpo</h1>
+            <br>
+            <h3>Identação e organização: </h3>
+            Mantenha seu código HTML bem estruturado e organizado, utilizando recuos consistentes para facilitar a leitura e a manutenção. Aplique espaços ou tabulações para que cada elemento aninhado fique devidamente recuado em relação ao seu contêiner pai. <br>
+            Além disso, agrupe conteúdos relacionados usando tags semânticas, como &lt;section&gt;, &lt;article&gt; e &lt;aside&gt;. Para reforçar a clareza e a lógica da estrutura do documento.
+            <br><br>
+            <h3>Comentários:</h3>
+            Utilize comentários para explicar partes do código que possam ser complexas ou que exijam uma explicação adicional. Isso ajuda outros desenvolvedores (ou você mesmo no futuro) a entenderem rapidamente o propósito de cada seção do código.
+            <br>
+            <div class="code-box">
+                <code>
+                    &lt;!-- Este é um comentário em HTML --&gt;<br>
+                    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+                </code>
+            </div>
+            <br>
+            <h3>Acessibilidade:</h3>
+            Sempre que possível, adicione atributos alt às imagens para descrever seu conteúdo. Isso é importante para a acessibilidade, <br>
+            pois permite que leitores de tela interpretem o conteúdo da imagem para usuários com deficiência visual.
+            <br><br>
+            <h3>Considerações Sobre SEO</h3>
+            <br>
+            Uma boa estruturação com tags semânticas não é apenas uma questão de organização visual, mas também de otimização para mecanismos de busca (SEO). Ao utilizar corretamente as tags, você facilita que buscadores entendam o conteúdo e a hierarquia de informações, o que pode melhorar a posição do seu site nos resultados de pesquisa.
+            <br>
+            <h1>Exemplo Prático: </h1>
+            <br>
+            A seguir, veja um exemplo que integra a estrutra básica de um documento HTML com as tags semânticas e boas práticas discutidas:
+            <div class="code-box-semantico">
+                <pre>
+                    <code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="UTF-8"&gt;
+                                &lt;title&gt;Exemplo de Site Semântico&lt;/title&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;header&gt;
+                                    &lt;h1&gt;Meu Site Semântico&lt;/h1&gt;
+                                    &lt;nav&gt;
+                                        &lt;ul&gt;
+                                            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                                            &lt;li&gt;&lt;a href="#sobre"&gt;Sobre&lt;/a&gt;&lt;/li&gt;
+                                            &lt;li&gt;&lt;a href="#contato"&gt;Contato&lt;/a&gt;&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                    &lt;/nav&gt;
+                                &lt;/header&gt;
+                                &lt;main&gt;
+                                    &lt;section id="home"&gt;
+                                        &lt;h2&gt;Bem-vindo&lt;/h2&gt;
+                                        &lt;p&gt;Esta é a seção principal de conteúdo da página.&lt;/p&gt;
+                                    &lt;/section&gt;
+                                    &lt;section id="sobre"&gt;
+                                        &lt;h2&gt;Sobre Nós&lt;/h2&gt;
+                                        &lt;p&gt;Informações sobre a empresa ou o projeto.&lt;/p&gt;
+                                    &lt;/section&gt;
+                                    &lt;section id="contato"&gt;
+                                        &lt;h2&gt;Contato&lt;/h2&gt;
+                                        &lt;p&gt;Como entrar em contato conosco.&lt;/p&gt;
+                                    &lt;/section&gt;
+                                &lt;/main&gt;
+                                &lt;footer&gt;
+                                    &lt;p&gt;&copy; 2025 Meu Site Semântico. Todos os direitos reservados.&lt;/p&gt;
+                                &lt;/footer&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code>
+                </pre>
+            </div>
+        <h1>Atividades Praicas:</h1><br>
+        <h3>Atividade 1: Criação da Estrutura Básica de um Documento HTML.</h3>
+        <strong>Objetivo:</strong> Criar um arquivo HTML que contenha a estrutura mínima exigida.
+        <br><br>
+        <h3>Intruções:</h3>
+        
+        1. Abra um editor de texto (como Visual Studio Code, Sublime Text ou até mesmo o Bloco de Notas). <br>
+        2. Crie um novo arquivo e salve-o com a extensão .html (por exemplo, meu_primeiro_site.html). <br>
+        <strong>Obs:</strong>  Geralmente o nome do primeiro arquivo HTML é index.html, mas você pode nomear como preferir. <br>
+        3. Insira a estrutura a básica abaixo: <br>
+        <div class="code-box-semantico">
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;meta charset="UTF-8"&gt;
+                        &lt;title&gt;Minha Primeira Página&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;!-- Conteúdo vai aqui --&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                </code>
+            </pre>
+        </div>
+        4. Salve o arquivo e abra-o em um navegador (como Chrome, Firefox ou Edge) para visualizar sua página. <br>
+        <strong>Conselho:</strong> Se você estiver usando o Visual Studio Code, você pode instalar a extensão "Live Server" <br> 
+        para visualizar suas alterações em tempo real. <br>
+        <br>
+        <h3>Atividade 2: Adicionando Conteúdo com Cabeçalhos e Parágrafos</h3>
+        <strong>Objetivo:</strong> Inserir diferentes niveis de cabeçalhos e parágrafos para praticar a hierarquia de conteúdo. <br>
+        <br>
+        <h3>Intruções:</h3>
+        1. Dentro da tag &lt;body&gt;, do seu arquivo.html, adicione os seguintes elementos <br>
+        <div class="code-box-semantico">
+            <pre>
+                <code>
+                    &lt;h1&gt;Título Principal&lt;/h1&gt;
+                    &lt;h2&gt;Subtítulo&lt;/h2&gt;
+                    &lt;p&gt;Este é um parágrafo de exemplo.&lt;/p&gt;
+                    &lt;p&gt;Outro parágrafo com mais informações.&lt;/p&gt;
+                    &lt;h3&gt;Subtítulo Secundário&lt;/h3&gt;
+                    &lt;p&gt;Mais informações sobre o assunto.&lt;/p&gt;
+                    &lt;h4&gt;Subtítulo Terciário&lt;/h4&gt;
+                    &lt;p&gt;Detalhes adicionais.&lt;/p&gt;
+                    &lt;h5&gt;Subtítulo Quaternário&lt;/h5&gt;
+                    &lt;p&gt;Informações complementares.&lt;/p&gt;
+                    &lt;h6&gt;Subtítulo Quinário&lt;/h6&gt;
+                    &lt;p&gt;Informações finais.&lt;/p&gt;
+                </code>
+            </pre>
+        </div>
+        2. Salve o arquivo e atualize a página no navegador para ver as alterações. <br>
+        <strong>Conselho:</strong> Use diferentes níveis de cabeçalhos para organizar o conteúdo de forma hierárquica. <br>
+        <strong>Obs:</strong>Se estiver usando o "live-server" ao salvar o codigo, a página será atualizada automaticamente. <br>
+        3. Para praticar um pouco de formatação: Use a tag &lt;br&gt; Para aplicar espaços, <br>
+        insira após um trecho do texto ou tag html que você queira que salte uma linha. <br>
+        <br><br>
+        <h3>Atividade 3: Inserção de Links e Imagens</h3>
+        <strong>Objetivo:</strong> Criar um links navegável e inserir uma imagem à sua página HTML. <br>
+        <br>
+        <h3>Intruções:</h3>
+        1. Inserindo um link: <br>
+        Dentro da tag &lt;body&gt;, adicione o seguinte código para criar um link: <br>
+        <div class="code-box-semantico">
+            <pre>
+                <code>
+                    &lt;a href="https://www.exemplo.com"&gt;Clique aqui para visitar um site exemplo&lt;/a&gt;
+                </code>
+            </pre>
+        </div>
+        <strong>Obs:</strong> O atributo: target="_blank" faz com que o link seja aberto em uma nova aba do navegador. <br>
+        2. Inserindo uma imagem: <br>
+        Dentro da tag &lt;body&gt;, adicione o seguinte código para inserir uma imagem: <br>
+        <strong>Obs:</strong> O atributo src deve conter o caminho da imagem que você deseja exibir. O caminho pode ser local ou um link. <br>
+        <div class="code-box-semantico">
+            <pre>
+                <code>
+                    &lt;img src="imagem-exemplo.jpg" alt="Descrição da imagem"&gt;
+                </code>
+            </pre>
+        </div>
+        3. Você pode alterar o tamanho da imagem adicionando os atributos width e height, como no exemplo abaixo: <br>
+        <br>
+        <div class="code-box-semantico">
+            <pre>
+                <code>
+                    &lt;img src="imagem-exemplo.jpg" alt="Descrição da imagem" width="300" height="200"&gt;
+                </code>
+            </pre>
+        </div>
+        4. Salve o arquivo e atualize a página no navegador para ver as alterações. <br>
+        <strong>Conselho:</strong> Use imagens relevantes e links úteis para enriquecer o conteúdo da sua página. <br>
+        <strong>Obs:</strong> Se estiver usando o "live-server" ao salvar o codigo, a página será atualizada automaticamente. <br>
+        </p>
+        
+        
+    </section>
+
+    <div class="quiz">
+        <h2>Quiz</h2>
+        <div class="question" data-correct="link">
+            <p>1. Qual tag é usada para criar links em um documento HTML?</p>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input type="radio" name="q1" value="link" />
+                        &lt;link&gt;
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q1" value="a" />
+                        &lt;a&gt;
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q1" value="nav" />
+                        &lt;nav&gt;
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="question" data-correct="img">
+            <p>2. O que o CSS faz em uma página web?</p>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input type="radio" name="q2" value="image" />
+                        &lt;image source="caminho-da-imagem" alt="descrição"&gt;
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q2" value="img" />
+                        &lt;img src="caminho-da-imagem" alt="descrição"&gt;
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q2" value="picture" />
+                        &lt;picture src="caminho-da-imagem" alt="descrição"&gt;
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <div class="question" data-correct="header">
+            <p>3. Qual tag semântica é usada para agrupar o conteúdo principal de uma página?</p>
+            <ul class="options">
+                <li>
+                    <label>
+                        <input type="radio" name="q3" value="header" />
+                        &lt;header&gt;
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q3" value="main" />
+                        &lt;main&gt;
+                    </label>
+                </li>
+                <li>
+                    <label>
+                        <input type="radio" name="q3" value="footer" />
+                        &lt;footer&gt;
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <button class="btn-submit" type="button">Enviar Quiz</button>
+        <button class="btn-next"><a href="./modulo2.html" rel="noopener noreferrer">Próximo</a></button>
+        <div class="quiz-result"></div>
+    </div>
 </body>
+<footer>
+    <p>&copy; 2023 Curso Iniciando na Programação. Todos os direitos reservados.</p>
+    <p>Desenvolvido por [Nome Do Grupo]</p>
+</footer>
 </html>
