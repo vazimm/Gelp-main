@@ -104,14 +104,25 @@ section p {
     text-align: left;
     max-width: 800px;
     margin: 20px auto;
-    font-size: 1.15em;
+    font-size: 1.25em;
     line-height: 1.8;
     padding: 0 10px;
 }
 
 /* Estilização dos cards de explicação */
 .explanation-box .explanation {
+    /*list-style: none; remove os marcadores de item*/
     padding-left: 20px; /* Ajuste o valor conforme necessário */
+}
+
+.code-custom {
+    font-family: "Courier New", monospace;
+    font-size: 1.2em;
+    background-color: #bac1c7;
+    color: #24292e;
+    padding: 0.2em 0.4em;
+    border-radius: 8px;
+    white-space: pre-wrap;
 }
 
 /* Estilo para code-box (usando &nbsp; para espaçamento) */
@@ -125,6 +136,7 @@ section p {
     font-size: 0.95em;
     line-height: 1.5;
     overflow-x: auto;
+    font-size: 1.2em;
 }
 
 /* Estilo para code-box-semantico (usando <pre> para preservar formatação) */
@@ -139,11 +151,31 @@ section p {
     font-size: 0.95em;
     line-height: 1.5;
     overflow-x: auto;
+    font-size: 1.2em;
 }
 
 .code-box-semantico pre {
     white-space: pre-wrap;  /* Permite quebrar linha se necessário */
     margin: 0;
+}
+
+/*Oculta opinião do professor*/
+.opiniao-intrutor {
+    display: none;
+}
+#toggle-opinion-btn {
+    background: #673AB7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#toggle-opinion-btn:hover {
+    background: #5a2b90;
 }
 
 /* Footer */
