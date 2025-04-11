@@ -1,173 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listas, Tabelas e Formulários em HTML</title>
-    <script src="/src/script/script.js" defer></script>
-    <script src="/src/script/quiz.js" defer></script>
-    <script src="/src/script/botao_instrutor.js" defer></script>
-    <link rel="stylesheet" href="/src/style/style_modules.css">
-</head>
-<body>    
-    <header>
-        <nav>
-            <div class="logo"><img src="/src/img/logo.png" alt="Logo"></div>
-            <ul>
-                <li><a href="/Index.html#about">Sobre</a></li>
-                <li><a href="/Index.html#tools">Ferramentas</a></li>
-                <li><a href="/Index.html#modulos">Modulos</a></li>
-                <li><a href="/Index.html#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Listas, Tabelas e Formulários em HTML</title>
+        <script src="/src/script/script.js" defer></script>
+        <script src="/src/script/quiz.js" defer></script>
+        <script src="/src/script/botao_instrutor.js" defer></script>
+        <link rel="stylesheet" href="/src/style/style_modules.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="/src/img/logo.png" alt="Logo" />
+                </div>
+                <ul>
+                    <li><a href="/Index.html#about">Sobre</a></li>
+                    <li><a href="/Index.html#tools">Ferramentas</a></li>
+                    <li><a href="/Index.html#modulos">Modulos</a></li>
+                    <li><a href="/Index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <section class="intro">
-        <h1>Módulo 3: Listas, Tabelas, e Formulários em HTML</h1>
-        <br>
-        <p>
-            <h1>Lista em HTML:</h1><br>
+        <section class="intro">
+            <h1>Módulo 3: Listas, Tabelas, e Formulários em HTML</h1>
+            <br />
+            <h1>Lista em HTML:</h1>
+            <br />
             <h3>Listas Não Ordenadas:</h3>
-            As listas não ordenadas são usadas para agrupar itens que não têm uma ordem específica. <br>
-            Elas são criadas usando a tag <code class="code-custom">&lt;ul&gt;</code> (lista não ordenada) e cada item da lista é definido com a tag <br>
-            <code class="code-custom">&lt;li&gt;</code> (item da lista). Veja um exemplo: <br>
+            <p>
+                As listas não ordenadas são usadas para agrupar itens que não
+                têm uma ordem específica. <br />
+                Elas são criadas usando a tag
+                <code class="code-custom">&lt;ul&gt;</code> (lista não ordenada)
+                e cada item da lista é definido com a tag <br />
+                <code class="code-custom">&lt;li&gt;</code> (item da lista).
+                Veja um exemplo: <br />
+            </p>
             <div class="code-box">
-                    <code>
-                    &nbsp;&lt;ul&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 3&lt;/li&gt; <br>
-                    &nbsp;&lt;/ul&gt; <br>
-                    </code>  
+                <code>
+                    &nbsp;&lt;ul&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 3&lt;/li&gt; <br />
+                    &nbsp;&lt;/ul&gt; <br />
+                </code>
             </div>
-            <br>
             <h3>Listas Ordenadas:</h3>
-            As listas ordenadas são usadas para agrupar itens que têm uma ordem específica. <br>
-            Elas são criadas usando a tag <code class="code-custom">&lt;ol&gt;</code> (lista ordenada) e cada item da lista é definido com a tag <br>
-            <code class="code-custom">&lt;li&gt;</code> (item da lista). Veja um exemplo: <br>
+            <p>
+                As listas ordenadas são usadas para agrupar itens que têm uma
+                ordem específica. <br />
+                Elas são criadas usando a tag
+                <code class="code-custom">&lt;ol&gt;</code> (lista ordenada) e
+                cada item da lista é definido com a tag <br />
+                <code class="code-custom">&lt;li&gt;</code> (item da lista).
+                Veja um exemplo: <br />
+            </p>
             <div class="code-box">
-                    <code>
-                    &nbsp;&lt;ol&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 3&lt;/li&gt; <br>
-                    &nbsp;&lt;/ol&gt; <br>
-                    </code>
+                <code>
+                    &nbsp;&lt;ol&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;li&gt;Item 3&lt;/li&gt; <br />
+                    &nbsp;&lt;/ol&gt; <br />
+                </code>
             </div>
-            <br>
-            <h1>Tabelas em HTML:</h1><br>
-            As tabelas são usadas para organizar dados em linhas e colunas. Elas são criadas usando a tag <code>&lt;table&gt;</code> <br>
-            (tabela), e cada linha da tabela é definida com a tag <code class="code-custom">&lt;tr&gt;</code> (linha da tabela). As células da tabela são <br>
-            definidas com a tag <code class="code-custom">&lt;td&gt;</code> (célula da tabela). Veja um exemplo: <br>           
+            <br />
+            <h1>Tabelas em HTML:</h1>
+            <p>
+                As tabelas são usadas para organizar dados em linhas e colunas.
+                Elas são criadas usando a tag <code>&lt;table&gt;</code> <br />
+                (tabela), e cada linha da tabela é definida com a tag
+                <code class="code-custom">&lt;tr&gt;</code> (linha da tabela).
+                As células da tabela são <br />
+                definidas com a tag
+                <code class="code-custom">&lt;td&gt;</code> (célula da tabela).
+                Veja um exemplo: <br />
+            </p>
             <div class="code-box">
-                    <code>
-                    &nbsp;&lt;table border="1"&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;tr&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Célula 1&lt;/td&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Célula 2&lt;/td&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br>
-                    &nbsp;&lt;/table&gt; <br>
-                    </code>
+                <code>
+                    &nbsp;&lt;table border="1"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;tr&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Célula 1&lt;/td&gt;
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Célula 2&lt;/td&gt;
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&lt;/tr&gt; <br />
+                    &nbsp;&lt;/table&gt; <br />
+                </code>
             </div>
             <div class="explanation-box">
                 <ul class="explanation">
-                    <li><code class="code-custom">&lt;table&gt;</code> : Cria a tabela <br><strong>Obs:</strong>border e um recurso CSS usado para criar a borda da tabela.</li>
-                    <li><code class="code-custom">&lt;tr&gt;</code> : Cria uma linha na tabela.</li>
-                    <li><code class="code-custom">&lt;td&gt;</code> : Cria uma célula na tabela.</li>
-                    <li><code class="code-custom">&lt;th&gt;</code> : Cria um cabeçalho na tabela.</li>
+                    <li>
+                        <code class="code-custom">&lt;table&gt;</code> : Cria a
+                        tabela <br /><strong>Obs:</strong>border e um recurso
+                        CSS usado para criar a borda da tabela.
+                    </li>
+                    <li>
+                        <code class="code-custom">&lt;tr&gt;</code> : Cria uma
+                        linha na tabela.
+                    </li>
+                    <li>
+                        <code class="code-custom">&lt;td&gt;</code> : Cria uma
+                        célula na tabela.
+                    </li>
+                    <li>
+                        <code class="code-custom">&lt;th&gt;</code> : Cria um
+                        cabeçalho na tabela.
+                    </li>
                 </ul>
             </div>
-            <br>
-            <strong>Sugestão:</strong> crie um arquivo HTML e teste os códigos acima, dentro do &lt;body&gt;. 
-            <br><br>
-            <h1>Formulários em HTML:</h1><br>
-            Os formulários são usados para coletar dados do usuário. Eles são criados usando a tag <code class="code-custom">&lt;form&gt;</code> (formulário),<br> usamos a tag <code class="code-custom">&lt;label&gt;</code> (rótulo) para descrever o campo de entrada,e cada campo do formulário é definido com <br> 
-            a tag <code class="code-custom">&lt;input&gt;</code> (campo de entrada). Existem vários tipos de campos de entrada: <br><br> 
-            <strong>Sendo os mais comuns:</strong>
-            <br><br>
+            <br />
+            <p>
+                <strong>Sugestão:</strong> crie um arquivo HTML e teste os
+                códigos acima, dentro do &lt;body&gt;.
+            </p>
+            <br />
+            <h1>Formulários em HTML:</h1>
+            <p>
+                Os formulários são usados para coletar dados do usuário. Eles
+                são criados usando a tag
+                <code class="code-custom">&lt;form&gt;</code>
+                (formulário),<br />
+                usamos a tag
+                <code class="code-custom">&lt;label&gt;</code> (rótulo) para
+                descrever o campo de entrada,e cada campo do formulário é
+                definido com <br />
+                a tag <code class="code-custom">&lt;input&gt;</code> (campo de
+                entrada). Existem vários tipos de campos de entrada:
+                <br /><br />
+                <strong>Sendo os mais comuns:</strong>
+            </p>
             <div class="explanation-box">
                 <ul class="explanation">
-                    <li><code class="code-custom">text</code> : Campo de texto simples.</li>
-                    <li><code class="code-custom">email</code> : Campo para inserir um endereço de e-mail.</li>
-                    <li><code class="code-custom">number</code> : Campo para inserir um número.</li>
-                    <li><code class="code-custom">password</code> : Campo para inserir uma senha.</li>
-                    <li><code class="code-custom">radio</code> : Botão de opção (radio button).</li>
-                    <li><code class="code-custom">checkbox</code> : Caixa de seleção (checkbox).</li>  
-                    <li><code class="code-custom">submit</code> : Botão de envio do formulário.</li>
+                    <li>
+                        <code class="code-custom">text</code> : Campo de texto
+                        simples.
+                    </li>
+                    <li>
+                        <code class="code-custom">email</code> : Campo para
+                        inserir um endereço de e-mail.
+                    </li>
+                    <li>
+                        <code class="code-custom">number</code> : Campo para
+                        inserir um número.
+                    </li>
+                    <li>
+                        <code class="code-custom">password</code> : Campo para
+                        inserir uma senha.
+                    </li>
+                    <li>
+                        <code class="code-custom">radio</code> : Botão de opção
+                        (radio button).
+                    </li>
+                    <li>
+                        <code class="code-custom">checkbox</code> : Caixa de
+                        seleção (checkbox).
+                    </li>
+                    <li>
+                        <code class="code-custom">submit</code> : Botão de envio
+                        do formulário.
+                    </li>
                 </ul>
             </div>
-            <br>
-            Veja um exemplo:
-            <br>
+            <br />
+            <p>Veja um exemplo:</p>
             <div class="code-box">
-                    <code>
-                    &nbsp;&lt;form&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;label for="name"&gt;Nome:&lt;/label&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;input type="email" id="email" name="email"&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Enviar&lt;/button&gt; <br>
-                    &nbsp;&lt;/form&gt; <br>
-                    </code>
+                <code>
+                    &nbsp;&lt;form&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;label
+                    for="name"&gt;Nome:&lt;/label&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;input type="text" id="name"
+                    name="name"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;label
+                    for="email"&gt;Email:&lt;/label&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;input type="email" id="email"
+                    name="email"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;button
+                    type="submit"&gt;Enviar&lt;/button&gt; <br />
+                    &nbsp;&lt;/form&gt; <br />
+                </code>
             </div>
-            <br>
-            <h3>Conexão do formulario com o Back-end</h3>
-            <strong>Obs:</strong> O foco do curso é em front-end, mas é importante entender como os formulários funcionam com o back-end. <br>
-            Quando um usuário preenche um formulário e clica no botão de envio, os dados do formulário são enviados para o servidor. <br>
-            O servidor processa os dados e pode armazená-los em um banco de dados, enviar um e-mail ou realizar outras ações. <br>
-            O back-end é responsável por lidar com a lógica do servidor, como validação de dados, autenticação de usuários e interação com bancos de dados. <br>
-            O front-end, por outro lado, é responsável pela interface do usuário e pela apresentação dos dados. <br>
-            Para conectar o front-end ao back-end, você pode usar tecnologias como AJAX (Asynchronous JavaScript and XML) ou Fetch API para enviar dados do formulário para o servidor sem recarregar a página. Isso permite uma experiência de usuário mais fluida e interativa. <br>
-            <br>
-            Para tratar os dados do formulário, você pode usar JavaScript ou enviar os dados para um servidor usando uma linguagem de back-end como PHP, Python, etc. <br>
-            Atráves do atributo <code class="code-custom">action</code> na tag <code class="code-custom">&lt;form&gt;</code>, você pode especificar o URL para onde os dados do formulário devem ser enviados. <br>
-            Usando o atributo <code class="code-custom">method</code>, você pode especificar o método HTTP a ser usado para enviar os dados do formulário. Os métodos mais comuns são <code class="code-custom">GET</code> e <code class="code-custom">POST</code>. <br>
-            O método <code class="code-custom">GET</code> envia os dados do formulário como parte da URL, enquanto o método <code class="code-custom">POST</code> envia os dados no corpo da solicitação HTTP. <br>
-            <br>
-            Veja um exemplo de como usar os atributos <code class="code-custom">action</code> e <code class="code-custom">method</code>:
-            <br>
+            <br />
+            <h1>Conexão do formulario com o Back-end</h1>
+            <p>
+                <strong>Obs:</strong> O foco do curso é em front-end, mas é
+                importante entender como os formulários funcionam com o
+                back-end. <br />
+                Quando um usuário preenche um formulário e clica no botão de
+                envio, os dados do formulário são enviados para o servidor.
+                <br />
+                O servidor processa os dados e pode armazená-los em um banco de
+                dados, enviar um e-mail ou realizar outras ações. <br />
+                O back-end é responsável por lidar com a lógica do servidor,
+                como validação de dados, autenticação de usuários e interação
+                com bancos de dados. <br />
+                O front-end, por outro lado, é responsável pela interface do
+                usuário e pela apresentação dos dados. <br />
+                Para conectar o front-end ao back-end, você pode usar
+                tecnologias como AJAX (Asynchronous JavaScript and XML) ou Fetch
+                API para enviar dados do formulário para o servidor sem
+                recarregar a página. Isso permite uma experiência de usuário
+                mais fluida e interativa. <br />
+                <br />
+                Para tratar os dados do formulário, você pode usar JavaScript ou
+                enviar os dados para um servidor usando uma linguagem de
+                back-end como PHP, Python, etc. <br />
+                Atráves do atributo <code class="code-custom">action</code> na
+                tag <code class="code-custom">&lt;form&gt;</code>, você pode
+                especificar o URL para onde os dados do formulário devem ser
+                enviados. <br />
+                Usando o atributo <code class="code-custom">method</code>, você
+                pode especificar o método HTTP a ser usado para enviar os dados
+                do formulário. Os métodos mais comuns são
+                <code class="code-custom">GET</code> e
+                <code class="code-custom">POST</code>. <br />
+                O método <code class="code-custom">GET</code> envia os dados do
+                formulário como parte da URL, enquanto o método
+                <code class="code-custom">POST</code> envia os dados no corpo da
+                solicitação HTTP. <br />
+                <br />
+                Veja um exemplo de como usar os atributos
+                <code class="code-custom">action</code> e
+                <code class="code-custom">method</code>:
+            </p>
             <div class="code-box">
-                    <code>
-                    &nbsp;&lt;form action="processar_formulario.php" method="POST"&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;label for="name"&gt;Nome:&lt;/label&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;input type="email" id="email" name="email"&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Enviar&lt;/button&gt; <br>
-                    &nbsp;&lt;/form&gt; <br>
-                    </code>
+                <code>
+                    &nbsp;&lt;form action="processar_formulario.php"
+                    method="POST"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;label
+                    for="name"&gt;Nome:&lt;/label&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;input type="text" id="name"
+                    name="name"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;label
+                    for="email"&gt;Email:&lt;/label&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;input type="email" id="email"
+                    name="email"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;button
+                    type="submit"&gt;Enviar&lt;/button&gt; <br />
+                    &nbsp;&lt;/form&gt; <br />
+                </code>
             </div>
-            <br>
+            <br />
             <h3>Validação de Formulários</h3>
-            A validação de formulários é o processo de garantir que os dados inseridos pelo usuário estejam corretos e completos antes de serem enviados para o servidor. <br>
-            A validação pode ser feita no lado do cliente (front-end) usando JavaScript ou no lado do servidor (back-end) usando uma linguagem de programação como PHP, Python, etc. <br>
-            A validação no lado do cliente é útil para fornecer feedback imediato ao usuário, enquanto a validação no lado do servidor é importante para garantir a segurança e integridade dos dados. <br>
-            Existem várias maneiras de validar formulários em HTML, incluindo: <br><br>
+            <p>
+                A validação de formulários é o processo de garantir que os dados
+                inseridos pelo usuário estejam corretos e completos antes de
+                serem enviados para o servidor. <br />
+                A validação pode ser feita no lado do cliente (front-end) usando
+                JavaScript ou no lado do servidor (back-end) usando uma
+                linguagem de programação como PHP, Python, etc. <br />
+                A validação no lado do cliente é útil para fornecer feedback
+                imediato ao usuário, enquanto a validação no lado do servidor é
+                importante para garantir a segurança e integridade dos dados.
+                <br />
+                Existem várias maneiras de validar formulários em HTML,
+                incluindo: <br /><br />
+            </p>
             <div class="explanation-box">
                 <ul class="explanation">
-                    <li>Usar atributos HTML5 como <code class="code-custom">required</code>, <code class="code-custom">minlength</code>, <code class="code-custom">maxlength</code>, <code class="code-custom">pattern</code>, etc.</li>
-                    <li>Usar JavaScript para validar os dados do formulário antes de enviá-los para o servidor.</li>
-                    <li>Usar bibliotecas de validação de formulários, como jQuery Validation ou Parsley.js.</li>
-                    <li>Usar frameworks de front-end, como React ou Angular, que possuem recursos de validação de formulários integrados.</li>
+                    <li>
+                        Usar atributos HTML5 como
+                        <code class="code-custom">required</code>,
+                        <code class="code-custom">minlength</code>,
+                        <code class="code-custom">maxlength</code>,
+                        <code class="code-custom">pattern</code>, etc.
+                    </li>
+                    <li>
+                        Usar JavaScript para validar os dados do formulário
+                        antes de enviá-los para o servidor.
+                    </li>
+                    <li>
+                        Usar bibliotecas de validação de formulários, como
+                        jQuery Validation ou Parsley.js.
+                    </li>
+                    <li>
+                        Usar frameworks de front-end, como React ou Angular, que
+                        possuem recursos de validação de formulários integrados.
+                    </li>
                 </ul>
             </div>
-            <br>
-            Veja um exemplo de validação de formulário usando o atributo <code class="code-custom">required</code>:
-            <br>
+            <br />
+            <p>
+                Veja um exemplo de validação de formulário usando o atributo
+                <code class="code-custom">required</code>:
+            </p>
             <div class="code-box">
-                    <code>
-                    &nbsp;&lt;form&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;label for="name"&gt;Nome:&lt;/label&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;input type="text" id="name" name="name" required&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;label for="email"&gt;Email:&lt;/label&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;input type="email" id="email" name="email" required&gt; <br>
-                    &nbsp;&nbsp;&nbsp;&lt;button type="submit"&gt;Enviar&lt;/button&gt; <br>
-                    &nbsp;&lt;/form&gt; <br>
-                    </code>
+                <code>
+                    &nbsp;&lt;form&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;label
+                    for="name"&gt;Nome:&lt;/label&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;input type="text" id="name"
+                    name="name" required&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;label
+                    for="email"&gt;Email:&lt;/label&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;input type="email" id="email"
+                    name="email" required&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&lt;button
+                    type="submit"&gt;Enviar&lt;/button&gt; <br />
+                    &nbsp;&lt;/form&gt; <br />
+                </code>
             </div>
-            <br>
-            Exemplo de validação de formulário usando HTML5:
-            <br>
+            <br />
+            <p>Exemplo de validação de formulário usando HTML5:</p>
             <div class="code-box-semantico">
                 <pre>
                     &lt;!DOCTYPE html&gt;
@@ -206,42 +343,83 @@
                     &lt;/html&gt;
                 </pre>
             </div>
-            <br>
+            <br />
             <div class="explanation-box">
                 <ul class="explanation">
-                    <li><code class="code-custom">required</code> : Indica que o campo é obrigatório.</li>
-                    <li><code class="code-custom">minlength</code> : Define o número mínimo de caracteres para o campo.</li>
-                    <li><code class="code-custom">maxlength</code> : Define o número máximo de caracteres para o campo.</li>
-                    <li><code class="code-custom">type="email"</code>  : Valida o formato do e-mail.</li>
-                    <li><code class="code-custom">type="password" minlength="6"</code> : define o campo como senha e exige no mínimo 6 caracteres.</li>
-                    <li><code class="code-custom">type="radio" name=sexo (mesmo nome indica o grupo)</code> : 
-                    <li><code class="code-custom">textarea require</code> : impede envio sem mensagem</li>
+                    <li>
+                        <code class="code-custom">required</code> : Indica que o
+                        campo é obrigatório.
+                    </li>
+                    <li>
+                        <code class="code-custom">minlength</code> : Define o
+                        número mínimo de caracteres para o campo.
+                    </li>
+                    <li>
+                        <code class="code-custom">maxlength</code> : Define o
+                        número máximo de caracteres para o campo.
+                    </li>
+                    <li>
+                        <code class="code-custom">type="email"</code> : Valida o
+                        formato do e-mail.
+                    </li>
+                    <li>
+                        <code class="code-custom"
+                            >type="password" minlength="6"</code
+                        >
+                        : define o campo como senha e exige no mínimo 6
+                        caracteres.
+                    </li>
+                    <li>
+                        <code class="code-custom">type="radio" name=sexo</code>
+                        (mesmo nome indica o grupo) : define o campo como botão
+                        de opção (radio button).
+                    </li>
+                    <li>
+                        <code class="code-custom">textarea require</code> :
+                        impede envio sem mensagem
+                    </li>
                 </ul>
             </div>
-            <br>
+            <br />
             <h3>Exercício Prático</h3>
-            Agora é a sua vez, Crie um formulário simples em HTML que contenha os seguintes campos: 
-            <br><br>
+            <p>
+                Agora é a sua vez, Crie um formulário simples em HTML que
+                contenha os seguintes campos:
+            </p>
             <div class="explanation-box">
                 <ul class="explanation">
                     <li>Nome (campo de texto)</li>
                     <li>Email (campo de email)</li>
                     <li>Senha (campo de senha)</li>
                     <li>Sexo (opções de rádio: Masculino, Feminino)</li>
-                    <li>Interesses (caixas de seleção: Música, Esportes, Tecnologia)</li>
+                    <li>
+                        Interesses (caixas de seleção: Música, Esportes,
+                        Tecnologia)
+                    </li>
                     <li>Mensagem (campo de texto grande)</li>
                     <li>Botão de Enviar</li>
                 </ul>
             </div>
-            <br>
-            <strong>Desafio:</strong> Adicione validação ao formulário para garantir que todos os campos sejam preenchidos corretamente antes de serem enviados. <br>
-            <strong>Obs:</strong> Você pode usar os atributos HTML5 mencionados acima ou escrever seu próprio código JavaScript para validar os dados do formulário. <br>
-            <br>
+            <br />
+            <p>
+                <strong>Desafio:</strong> Adicione validação ao formulário para
+                garantir que todos os campos sejam preenchidos corretamente
+                antes de serem enviados. <br />
+                <strong>Obs:</strong> Você pode usar os atributos HTML5
+                mencionados acima ou escrever seu próprio código JavaScript para
+                validar os dados do formulário. <br />
+            </p>
+            <br />
             <h3>Opinião do instrutor:</h3>
-            Abaixo se encontra a resolução do exercício, mas não olhe antes de tentar resolver o exercício por conta própria. <br>
-            <br>
-            <button id="toggle-opinion-btn" type="button">Mostrar Opinião do Instrutor</button>
-            <br>
+            <p>
+                Abaixo se encontra a resolução do exercício, mas não olhe antes
+                de tentar resolver o exercício por conta própria. <br />
+            </p>
+            <br />
+            <button id="toggle-opinion-btn" type="button">
+                Mostrar Opinião do Instrutor
+            </button>
+            <br />
             <div class="code-box-semantico">
                 <div class="opiniao-intrutor">
                     <pre>
@@ -297,79 +475,110 @@
                     </pre>
                 </div>
             </div>
-            <br>
             <div id="verificadores" class="explanation-box">
                 <ul class="explanation">
-                    <li><code class="code-custom">required</code> : Indica que o campo é obrigatório.</li>
-                    <li><code class="code-custom">minlength</code> : Define o número mínimo de caracteres para o campo.</li>
-                    <li><code class="code-custom">maxlength</code> : Define o número máximo de caracteres para o campo.</li>
-                    <li><code class="code-custom">pattern</code> : Define uma expressão regular que o valor do campo deve corresponder.</li>
-                    <li><code class="code-custom">type="radio"</code> : name (define o nome do grupo de opções). Se usar o required junto, obriga o usuário a escolher uma opção (sexo).
-                        <br><strong>Obs:</strong> Volte ao exemplo e analise a entrada do campo sexo do usuário.
+                    <li>
+                        <code class="code-custom">required</code> : Indica que o
+                        campo é obrigatório.
                     </li>
-                    <li><code class="code-custom">type="checkbox"</code> : Permite que o usuário selecione várias opções (interesses).</li>
-                    <li><code class="code-custom">textarea require</code> : Impede envio sem mensagem.</li>
+                    <li>
+                        <code class="code-custom">minlength</code> : Define o
+                        número mínimo de caracteres para o campo.
+                    </li>
+                    <li>
+                        <code class="code-custom">maxlength</code> : Define o
+                        número máximo de caracteres para o campo.
+                    </li>
+                    <li>
+                        <code class="code-custom">pattern</code> : Define uma
+                        expressão regular que o valor do campo deve
+                        corresponder.
+                    </li>
+                    <li>
+                        <code class="code-custom">type="radio"</code> : name
+                        (define o nome do grupo de opções). Se usar o required
+                        junto, obriga o usuário a escolher uma opção (sexo).
+                        <br /><strong>Obs:</strong> Volte ao exemplo e analise a
+                        entrada do campo sexo do usuário.
+                    </li>
+                    <li>
+                        <code class="code-custom">type="checkbox"</code> :
+                        Permite que o usuário selecione várias opções
+                        (interesses).
+                    </li>
+                    <li>
+                        <code class="code-custom">textarea require</code> :
+                        Impede envio sem mensagem.
+                    </li>
                 </ul>
             </div>
-        </p>
-        
-    </section>
+        </section>
 
-    <div class="quiz">
-        <h2>Quiz</h2>
-        <div class="question" data-correct="form">
-            <p>1. Como criar um Formulário simples em HTML?</p>
-            <ul class="options">
-                <li>
-                    <label>
-                        <input type="radio" name="q1" value="input" />
-                        Usando a tag &lt;input&gt; apenas.
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="q1" value="form" />
-                        Usando as tags &lt;form&gt;, &lt;input&gt; e &lt;button&gt;.
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="q1" value="table" />
-                        Usando as tags &lt;table&gt;, &lt;tr&gt; e &lt;td&gt;.
-                    </label>
-                </li>
-            </ul>
+        <div class="quiz">
+            <h2>Quiz</h2>
+            <div class="question" data-correct="form">
+                <p>1. Como criar um Formulário simples em HTML?</p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="input" />
+                            Usando a tag &lt;input&gt; apenas.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="form" />
+                            Usando as tags &lt;form&gt;, &lt;input&gt; e
+                            &lt;button&gt;.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="table" />
+                            Usando as tags &lt;table&gt;, &lt;tr&gt; e
+                            &lt;td&gt;.
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="inputs">
+                <p>
+                    2. Quais são alguns dos tipos de &lt;input&gt; que podem ser
+                    usados em formulários HTML?
+                </p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="inputs" />
+                            text, email, number, password, radio, checkbox.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="links" />
+                            img, canvas, video.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="lista" />
+                            li, ul, ol.
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn-submit" type="button">Enviar Quiz</button>
+            <button class="btn-next">
+                <a href="./modulo4.html" rel="noopener noreferrer">Próximo</a>
+            </button>
+            <div class="quiz-result"></div>
         </div>
-        <div class="question" data-correct="inputs">
-            <p>2. Quais são alguns dos tipos de &lt;input&gt; que podem ser usados em formulários HTML?</p>
-            <ul class="options">
-                <li>
-                    <label>
-                        <input type="radio" name="q2" value="inputs" />
-                        text, email, number, password, radio, checkbox.
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="q2" value="links" />
-                        img, canvas, video.
-                    </label>
-                </li>
-                <li>
-                    <label>
-                        <input type="radio" name="q2" value="lista" />
-                        li, ul, ol.
-                    </label>
-                </li>
-            </ul>
-        </div>
-        <button class="btn-submit" type="button">Enviar Quiz</button>
-        <button class="btn-next"><a href="./modulo4.html" rel="noopener noreferrer">Próximo</a></button>
-        <div class="quiz-result"></div>
-    </div>
-</body>
-<footer>
-    <p>&copy; 2023 Curso Iniciando na Programação. Todos os direitos reservados.</p>
-    <p>Desenvolvido por [Nome Do Grupo]</p>
-</footer>
+    </body>
+    <footer>
+        <p>
+            &copy; 2023 Curso Iniciando na Programação. Todos os direitos
+            reservados.
+        </p>
+        <p>Desenvolvido por [Nome Do Grupo]</p>
+    </footer>
 </html>
