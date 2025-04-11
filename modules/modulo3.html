@@ -174,47 +174,34 @@
                     &lt;html lang="pt-BR"&gt;
                     &lt;head&gt;
                         &lt;meta charset="UTF-8"&gt;
-                        &lt;title&gt;Formulário com Validação HTML5&lt;/title&gt;
+                        &lt;title&gt;Formulário com Validação&lt;/title&gt;
                     &lt;/head&gt;
                     &lt;body&gt;
-                        &lt;h2&gt;Formulário de Cadastro&lt;/h2&gt;
+                        &lt;main&gt;
+                            &lt;section&gt;
+                                &lt;h2&gt;Cadastro&lt;/h2&gt;
+                                &lt;form&gt;
+                                    &lt;!-- Campo Nome --&gt;
+                                    &lt;label for="nome"&gt;Nome:&lt;/label&gt;&lt;br&gt;
+                                    &lt;input type="text" id="nome" name="nome" required&gt;&lt;br&gt;&lt;br&gt;
 
-                        &lt;form action="processa.php" method="post"&gt;
-                            &lt;!-- Nome --&gt;
-                            &lt;label for="nome"&gt;Nome:&lt;/label&gt;
-                            &lt;input type="text" id="nome" name="nome" required&gt;&lt;br&gt;&lt;br&gt;
+                                    &lt;!-- Campo E-mail --&gt;
+                                    &lt;label for="email"&gt;E-mail:&lt;/label&gt;&lt;br&gt;
+                                    &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
 
-                            &lt;!-- Email --&gt;
-                            &lt;label for="email"&gt;Email:&lt;/label&gt;
-                            &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+                                    &lt;!-- Campo Senha --&gt;
+                                    &lt;label for="senha"&gt;Senha:&lt;/label&gt;&lt;br&gt;
+                                    &lt;input type="password" id="senha" name="senha" minlength="6" required&gt;&lt;br&gt;&lt;br&gt;
 
-                            &lt;!-- Senha --&gt;
-                            &lt;label for="senha"&gt;Senha:&lt;/label&gt;
-                            &lt;input type="password" id="senha" name="senha" required minlength="6"&gt;&lt;br&gt;&lt;br&gt;
+                                    &lt;!-- Campo Idade --&gt;
+                                    &lt;label for="idade"&gt;Idade:&lt;/label&gt;&lt;br&gt;
+                                    &lt;input type="number" id="idade" name="idade" min="18" max="100" required&gt;&lt;br&gt;&lt;br&gt;
 
-                            &lt;!-- Sexo --&gt;
-                            &lt;label&gt;Sexo:&lt;/label&gt;&lt;br&gt;
-                            &lt;input type="radio" id="masculino" name="sexo" value="Masculino" required&gt;
-                            &lt;label for="masculino"&gt;Masculino&lt;/label&gt;&lt;br&gt;
-                            &lt;input type="radio" id="feminino" name="sexo" value="Feminino"&gt;
-                            &lt;label for="feminino"&gt;Feminino&lt;/label&gt;&lt;br&gt;&lt;br&gt;
-
-                            &lt;!-- Interesses --&gt;
-                            &lt;label&gt;Interesses:&lt;/label&gt;&lt;br&gt;
-                            &lt;input type="checkbox" id="musica" name="interesses" value="Música"&gt;
-                            &lt;label for="musica"&gt;Música&lt;/label&gt;&lt;br&gt;
-                            &lt;input type="checkbox" id="esportes" name="interesses" value="Esportes"&gt;
-                            &lt;label for="esportes"&gt;Esportes&lt;/label&gt;&lt;br&gt;
-                            &lt;input type="checkbox" id="tecnologia" name="interesses" value="Tecnologia"&gt;
-                            &lt;label for="tecnologia"&gt;Tecnologia&lt;/label&gt;&lt;br&gt;&lt;br&gt;
-
-                            &lt;!-- Mensagem --&gt;
-                            &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;&lt;br&gt;
-                            &lt;textarea id="mensagem" name="mensagem" rows="4" cols="50" required&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
-
-                            &lt;!-- Botão de Enviar --&gt;
-                            &lt;input type="submit" value="Enviar"&gt;
-                        &lt;/form&gt;
+                                    &lt;!-- Botão de Enviar --&gt;
+                                    &lt;input type="submit" value="Enviar"&gt;
+                                &lt;/form&gt;
+                            &lt;/section&gt;
+                        &lt;/main&gt;
                     &lt;/body&gt;
                     &lt;/html&gt;
                 </pre>
@@ -225,10 +212,9 @@
                     <li><code class="code-custom">required</code> : Indica que o campo é obrigatório.</li>
                     <li><code class="code-custom">minlength</code> : Define o número mínimo de caracteres para o campo.</li>
                     <li><code class="code-custom">maxlength</code> : Define o número máximo de caracteres para o campo.</li>
-                    <li><code class="code-custom">pattern</code> : Define uma expressão regular que o valor do campo deve corresponder.</li>
-                    <li><code class="code-custom">type="radio"</code> : name (define o nome do grupo de opções), se usar o require: junto: <br> obriga o usuário a escolher uma opção (sexo).</li>
-                    <strong>Obs:</strong>volte ao exemplo e análise a entrada do campo sexo do usuário. 
-                    <li><code class="code-custom">type="checkbox"</code> : Permite que o usuário selecione várias opções (interesses).</li>
+                    <li><code class="code-custom">type="email"</code>  : Valida o formato do e-mail.</li>
+                    <li><code class="code-custom">type="password" minlength="6"</code> : define o campo como senha e exige no mínimo 6 caracteres.</li>
+                    <li><code class="code-custom">type="radio" name=sexo (mesmo nome indica o grupo)</code> : 
                     <li><code class="code-custom">textarea require</code> : impede envio sem mensagem</li>
                 </ul>
             </div>
@@ -253,7 +239,9 @@
             <br>
             <h3>Opinião do instrutor:</h3>
             Abaixo se encontra a resolução do exercício, mas não olhe antes de tentar resolver o exercício por conta própria. <br>
+            <br>
             <button id="toggle-opinion-btn" type="button">Mostrar Opinião do Instrutor</button>
+            <br>
             <div class="code-box-semantico">
                 <div class="opiniao-intrutor">
                     <pre>
@@ -309,11 +297,20 @@
                     </pre>
                 </div>
             </div>
-
-
-
-
-           
+            <br>
+            <div id="verificadores" class="explanation-box">
+                <ul class="explanation">
+                    <li><code class="code-custom">required</code> : Indica que o campo é obrigatório.</li>
+                    <li><code class="code-custom">minlength</code> : Define o número mínimo de caracteres para o campo.</li>
+                    <li><code class="code-custom">maxlength</code> : Define o número máximo de caracteres para o campo.</li>
+                    <li><code class="code-custom">pattern</code> : Define uma expressão regular que o valor do campo deve corresponder.</li>
+                    <li><code class="code-custom">type="radio"</code> : name (define o nome do grupo de opções). Se usar o required junto, obriga o usuário a escolher uma opção (sexo).
+                        <br><strong>Obs:</strong> Volte ao exemplo e analise a entrada do campo sexo do usuário.
+                    </li>
+                    <li><code class="code-custom">type="checkbox"</code> : Permite que o usuário selecione várias opções (interesses).</li>
+                    <li><code class="code-custom">textarea require</code> : Impede envio sem mensagem.</li>
+                </ul>
+            </div>
         </p>
         
     </section>
