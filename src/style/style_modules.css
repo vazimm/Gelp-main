@@ -129,6 +129,8 @@ section p {
     /*list-style: none; remove os marcadores de item*/
     padding-left: 20px;
     /* Ajuste o valor conforme necessário */
+    font-size: 1.15em;
+    /* Aumenta o tamanho do texto */
 }
 
 .code-custom {
@@ -157,6 +159,14 @@ section p {
     font-size: 1.2em;
 }
 
+.code-centered {
+    display: table;
+    margin: 20px auto;
+    /* Centraliza o container */
+    text-align: left;
+    /* Mantém o alinhamento à esquerda, preservando a indentação */
+}
+
 /* Estilo para code-box-semantico (usando <pre> para preservar formatação) */
 .code-box-semantico {
     background: #272822;
@@ -178,6 +188,76 @@ section p {
     white-space: pre-wrap;
     /* Permite quebrar linha se necessário */
     margin: 0;
+}
+
+/* Exemplo: Texto dimensionado */
+.dim-text {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Exemplo: Tabela dimensionada */
+.dim-table {
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Helvetica', sans-serif;
+}
+
+.dim-table th,
+.dim-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.dim-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+.dim-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Exemplo: Caixa com borda dimensionada */
+.dim-box {
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border: 5px solid #3498db;
+    border-radius: 8px;
+    background-color: #ecf6fd;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.property-highlight {
+    color: #e60073;
+    /* Cor vibrante para o texto */
+    background-color: #fff0f6;
+    /* Fundo com tom suave para destaque */
+    font-weight: bold;
+    padding: 0.3em 0.5em;
+    /* Espaçamento interno aumentado */
+    border-radius: 6px;
+    /* Bordas levemente mais arredondadas */
+    font-size: 1.3em;
+    /* Aumenta o tamanho da fonte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil para dar relevo */
+}
+
+.text-color-highlight {
+    color: #007acc;
+    /* Altere para a cor desejada */
 }
 
 /*Oculta opinião do professor*/

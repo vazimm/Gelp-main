@@ -1,11 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introdução ao CSS</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Introdução ao CSS</title>
+        <script src="/src/script/script.js" defer></script>
+        <script src="/src/script/quiz.js" defer></script>
+        <script src="/src/script/botao_instrutor.js" defer></script>
+        <link rel="stylesheet" href="/src/style/style_modules.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="/src/img/logo.png" alt="Logo" />
+                </div>
+                <ul>
+                    <li><a href="/Index.html#about">Sobre</a></li>
+                    <li><a href="/Index.html#tools">Ferramentas</a></li>
+                    <li><a href="/Index.html#modulos">Modulos</a></li>
+                    <li><a href="/Index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="intro">
+            <h1>Módulo 4:Introdução ao CSS</h1>
+            <br />
+            <h1>O que é o CSS:</h1>
+            <br />
+            <p>
+                O CSS (Cascading Style Sheets) é uma linguagem de estilo
+                utilizada para descrever a apresentação de documentos HTML.
+                <br />
+                Ele permite que você controle o layout, as cores, as fontes e
+                outros aspectos visuais de uma página web.
+                <br />
+                O CSS é uma parte fundamental do desenvolvimento web moderno,
+                permitindo que os desenvolvedores criem interfaces atraentes e
+                responsivas. Com o CSS, você pode aplicar estilos a elementos
+                HTML de forma eficiente e reutilizável.
+                <br />
+                O CSS é uma linguagem de estilo que pode ser aplicada a qualquer
+                tipo de documento HTML, e é amplamente utilizado em conjunto com
+                outras tecnologias web, como JavaScript e frameworks front-end.
+                <br />
+            </p>
+            <h1>Por que usar o CSS:</h1>
+            <br />
+            <p>
+                O CSS permite separar o conteúdo da apresentação. Isso significa
+                que você pode alterar a aparência de um site sem precisar
+                modificar o HTML. Além disso, o CSS oferece uma série de
+                vantagens, como:
+                <br />
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>Facilidade de manutenção</li>
+                    <li>Reutilização de estilos</li>
+                    <li>Compatibilidade com dispositivos móveis</li>
+                    <li>Melhoria no desempenho do site</li>
+                    <li>Flexibilidade e controle total sobre o layout</li>
+                </ul>
+            </div>
+            <br />
+            <h1>Formas de Aplicações do CSS:</h1>
+            <p>
+                <br />
+                O CSS pode ser aplicado de três maneiras diferentes:
+                <br />
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        <strong>Inline CSS:</strong> Estilos aplicados
+                        diretamente nos elementos HTML usando o atributo
+                        "style".
+                    </li>
+                    <li>
+                        <strong>Internal CSS:</strong> Estilos definidos dentro
+                        da tag <code class="code-custom">&lt;style&gt;</code> no
+                        cabeçalho do documento HTML.
+                    </li>
+                    <li>
+                        <strong>External CSS:</strong> Estilos definidos em um
+                        arquivo CSS separado, que é vinculado ao documento HTML
+                        usando a tag
+                        <code class="code-custom">&lt;link&gt;</code>.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <h3>CSS Inline:</h3>
+            <p>
+                O CSS inline é aplicado diretamente nos elementos HTML usando o
+                atributo "style". Isso significa que você pode definir estilos
+                específicos para um único elemento sem afetar outros elementos
+                na página.
+                <br />
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    &lt;p style="color: red;"&gt;Texto vermelho&lt;/p&gt;
+                </code>
+            </div>
+            <br />
+            <h3>CSS Interno:</h3>
+            <p>
+                O CSS interno é definido dentro da tag
+                <code class="code-custom">&lt;style&gt;</code> no cabeçalho do
+                documento HTML. Isso permite que você aplique estilos a vários
+                elementos na mesma página sem precisar repetir o código.
+                <br />
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    &lt;style&gt;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;body &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;background-color:
+                    lightblue;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&#125;<br />
+                    &lt;/style&gt;
+                </code>
+            </div>
+            <h3>CSS Externo:</h3>
+            <p>
+                O CSS externo é definido em um arquivo CSS separado, que é
+                vinculado ao documento HTML usando a tag
+                <code class="code-custom">&lt;link&gt;</code>. Isso permite que
+                você reutilize os mesmos estilos em várias páginas da web.
+                <br />
+            </p>
+            <div class="code-box code-centered">
+                <code> &lt;link rel="stylesheet" href="styles.css"&gt; </code>
+            </div>
+            <br />
+            <p>Arquivo <strong>style.css</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    body &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;background-color: lightblue;<br />
+                    &#125; <br />
+                    h1 &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: white;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br />
+                    &#125; <br />
+                    p &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-size: 20px;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: black;<br />
+                    &#125;
+                </code>
+            </div>
+            <p>
+                Acima está uma representação da estrutura de um arquivo style.
+            </p>
+            <br />
+            <h1>Sintaxe Do CSS:</h1>
+            <br />
+            <p>
+                A sintaxe do CSS é simples e fácil de entender. Cada regra CSS
+                consiste em um seletor e um bloco de declarações. O seletor
+                indica qual elemento HTML será estilizado, enquanto o bloco de
+                declarações contém as propriedades e valores que serão aplicados
+                a esse elemento.
+            </p>
+            <p>
+                A sintaxe básica do CSS é a seguinte:
+                <br />
+                <br />
+                <code class="property-highlight">seletor {</code>
+                <br />
+                <code class="property-highlight">propriedade:</code>
+                valor;
+                <br />
+                <code class="property-highlight">}</code>
+            </p>
+            <p>
+                <br />
+                <code class="property-highlight">h1 {</code>
+                <br />
+                <code class="property-highlight">color:</code> blue;
+                <br />
+                <code class="property-highlight">}</code>
+            </p>
+            <p>
+                Neste exemplo, o seletor é "h1", que se refere a todos os
+                elementos <code class="code-custom">&lt;h1&gt;</code> da página.
+                A propriedade "color" define a cor do texto como azul.
+                <br />
+            </p>
+            <br />
+            <h1>Seletores:</h1>
+            <br />
+            <p>
+                Os seletores são usados para selecionar os elementos HTML que
+                você deseja estilizar. Existem vários tipos de seletores no CSS,
+                incluindo:
+                <br />
+                Tag Selector: Seleciona todos os elementos de uma determinada
+                tag HTML. Por exemplo, <code class="code-custom">h1</code> irá
+                selecionar todos os elementos
+                <code class="code-custom">&lt;h1&gt;</code>
+                na página.
+                <br />
+                Class Selector: Seleciona todos os elementos que possuem uma
+                determinada classe. Para usar um seletor de classe, você deve
+                preceder o nome da classe com um ponto (.). Por exemplo,
+                <code class="code-custom">.minha-classe</code> irá selecionar
+                todos os elementos que possuem a classe "minha-classe".
+                <br />
+                ID Selector: Seleciona um elemento específico com um ID
+                exclusivo. Para usar um seletor de ID, você deve preceder o ID
+                com um símbolo de hash (#). Por exemplo,
+                <code class="code-custom">#meu-id</code> irá selecionar o
+                elemento com o ID "meu-id".
+                <br />
+                Abaixo estão alguns exemplos de seletores CSS:
+                <br />
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    h1 &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;color: blue;<br />
+                    &#125; <br />
+                    .minha-classe &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br />
+                    &#125; <br />
+                    #meu-id &#123;<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;font-size: 24px;<br />
+                    &#125;
+                </code>
+            </div>
+            <br />
+            <p>Abaixo está como os seletores são inseridos no HTML:</p>
+            <div class="code-box code-centered">
+                <code> &lt;h1 class="minha-classe" &gt;Título&lt;/h1&gt; </code>
+            </div>
+            <div class="code-box code-centered">
+                <code> &lt;h3 id = "subtitulo" &gt;Subtítulo&lt;/h3&gt; </code>
+            </div>
+            <br />
+            <p>
+                <strong>Dicas Importantes:</strong>
+                <br />
+                1. Use seletores de classe para aplicar estilos a grupos de
+                elementos semelhantes.
+                <br />
+                2. Use seletores de ID para aplicar estilos a elementos
+                específicos.
+                <br />
+                3. Evite usar seletores inline, pois eles podem dificultar a
+                manutenção do código.
+                <br />
+                4. Use seletores de tag para aplicar estilos a todos os
+                elementos de uma determinada tag, mas tenha cuidado para não
+                afetar outros elementos indesejados.
+                <br />
+                5. Combine seletores para aplicar estilos a elementos que
+                atendem a várias condições. Por exemplo,
+                <code class="code-custom">h1.minha-classe</code> irá selecionar
+                todos os elementos
+                <code class="code-custom">&lt;h1&gt;</code> que possuem a classe
+                "minha-classe".
+                <br />
+                6. Use seletores descendentes para aplicar estilos a elementos
+                que estão dentro de outros elementos. Por exemplo,
+                <code class="code-custom">div p</code> irá selecionar todos os
+                elementos <code class="code-custom">&lt;p&gt;</code> que estão
+                dentro de um elemento
+                <code class="code-custom">&lt;div&gt;</code>.
+                <br />
+            </p>
+            <h1>Prática:</h1>
+            <p>
+                Agora que você aprendeu sobre o CSS, é hora de praticar! Tente
+                criar uma página HTML simples e aplicar estilos usando CSS.
+                <br />
+                Você pode usar os exemplos acima como ponto de partida.
+                Lembre-se de experimentar diferentes seletores e propriedades
+                CSS para ver como eles afetam a aparência da sua página.
+                <br />
+            </p>
+            <button id="toggle-opinion-btn" type="button">
+                Mostrar Opinião do Instrutor
+            </button>
+            <br />
+            <div class="code-box-semantico">
+                <div class="opiniao-intrutor">
+                    <pre>
+                        &lt;--html--&gt;
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;meta charset="UTF-8"&gt;
+                                &lt;title&gt;CSS Exemplo&lt;/title&gt;
+                                &lt;link rel="stylesheet" href="estilo.css"&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;h1 id="titulo-principal"&gt;Meu Site com CSS&lt;/h1&gt;
+                                &lt;p class="texto-destaque"&gt;Este parágrafo usa uma classe.&lt;/p&gt;
+                                &lt;p&gt;Este parágrafo usa estilo padrão.&lt;/p&gt;
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+
+                        &lt;--style--&gt;
+                            /* CSS - estilo.css */
+                            #titulo-principal &#123;
+                                color: darkred;
+                            &#125;
+
+                            .texto-destaque &#123;
+                                background-color: yellow;
+                                font-style: italic;
+                            &#125;
+
+                            p &#123;
+                                font-family: Verdana;
+                                font-size: 16px;
+                            &#125;
+                    </pre>
+                </div>
+            </div>
+        </section>
+        <div class="quiz">
+            <h2>Quiz</h2>
+            <div class="question" data-correct="c">
+                <p>
+                    1. Qual &eacute; a diferen&ccedil;a entre classe e ID no
+                    CSS?
+                </p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="a" />
+                            A classe &eacute; usada apenas uma vez, o ID
+                            v&aacute;rias.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="b" />
+                            O ID &eacute; usado para v&aacute;rios elementos, a
+                            classe apenas uma vez.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="c" />
+                            A classe pode ser usada em v&aacute;rios elementos,
+                            o ID deve ser &uacute;nico.
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="b">
+                <p>
+                    2. Como conectar um arquivo CSS externo a uma p&aacute;gina
+                    HTML?
+                </p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="a" />
+                            Usando a tag &lt;script
+                            src=&quot;estilo.css&quot;&gt; no final do body.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="b" />
+                            Usando &lt;link rel=&quot;stylesheet&quot;
+                            href=&quot;estilo.css&quot;&gt; dentro do head.
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="c" />
+                            Usando &lt;style src=&quot;estilo.css&quot;&gt;.
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn-submit" type="button">Enviar Quiz</button>
+            <button class="btn-next">
+                <a href="./modulo5.html" rel="noopener noreferrer">Próximo</a>
+            </button>
+            <div class="quiz-result"></div>
+        </div>
+    </body>
 </html>
