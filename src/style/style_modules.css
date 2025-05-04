@@ -239,6 +239,7 @@ section p {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+
 .property-highlight {
     color: #e60073;
     /* Cor vibrante para o texto */
@@ -255,9 +256,46 @@ section p {
     /* Sombra sutil para dar relevo */
 }
 
+
 .text-color-highlight {
     color: #007acc;
     /* Altere para a cor desejada */
+}
+
+.element-color-highlight {
+    color: #af0c0c;
+    /* Altere para a cor desejada */
+}
+
+/* Estilo para a tabela de explicação */
+.grid-explanation-table {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: #333;
+}
+
+.grid-explanation-table thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.grid-explanation-table th,
+.grid-explanation-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-explanation-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.grid-explanation-table tbody tr:hover {
+    background-color: #f1f1f1;
 }
 
 /*Oculta opinião do professor*/

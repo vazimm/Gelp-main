@@ -1,11 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layouts com CSS, Flexbox e Grid</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Layouts com CSS, Flexbox e Grid</title>
+        <script src="/src/script/script.js" defer></script>
+        <script src="/src/script/quiz.js" defer></script>
+        <script src="/src/script/botao_instrutor.js" defer></script>
+        <link rel="stylesheet" href="/src/style/style_modules.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="/src/img/logo.png" alt="Logo" />
+                </div>
+                <ul>
+                    <li><a href="/Index.html#about">Sobre</a></li>
+                    <li><a href="/Index.html#tools">Ferramentas</a></li>
+                    <li><a href="/Index.html#modulos">Modulos</a></li>
+                    <li><a href="/Index.html#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="intro">
+            <h1>Módulo 6: Layouts com CSS, Flexbox e Grid</h1>
+            <br />
+            <h1>Introdução: Flexbox e Grid</h1>
+            <p>
+                Até agora, aprendemos a estilizar elementos isolados com cores,
+                fontes, bordas e espaçamentos. Mas quando queremos organizar
+                vários elementos juntos — como menus, seções de uma página,
+                colunas ou áreas laterais — precisamos de ferramentas mais
+                poderosas de layout. <br />
+                <br />
+                É aí que entram o Flexbox e o CSS Grid. <br />
+                <br />
+                Essas duas tecnologias modernas do CSS nos permitem criar
+                layouts responsivos, centralizar elementos com facilidade,
+                alinhar componentes em linhas ou colunas e controlar a
+                distribuição de espaço na tela — sem depender de gambiarras com
+                margens ou floats. <br />
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        O Flexbox é ideal para alinhar itens em uma dimensão
+                        (horizontal ou vertical).
+                    </li>
+                    <li>
+                        O CSS Grid é excelente para estruturar dois eixos ao
+                        mesmo tempo (linhas e colunas).
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>
+                Com esses dois recursos, você terá controle total sobre o
+                posicionamento e o comportamento dos elementos em diferentes
+                tamanhos de tela. <br />
+            </p>
+            <h1>Flexbox - Alinhamento em linha e coluna</h1>
+            <br />
+            <p>
+                O <strong>Flexbox</strong> (flexible box) permite
+                <strong
+                    >dispor e alinhar elementos em uma linha ou coluna</strong
+                >, adaptando-se facilmente a diferentes tamanhos de tela.
+                <br />
+                <strong>Ativando o Flexbox:</strong>
+                Para ativar o Flexbox, adicione a propriedade
+                <strong>display: flex;</strong> ao elemento CSS. Isso fará com
+                que todos os elementos filhos se comportem como itens flexíveis.
+            </p>
+            <br />
+            <code><span class="property-highlight">display: flex;</span></code>
+            <strong>Ativa o flexbox</strong>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.container</span>
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display: flex;</span
+                    ><br />
+                    }
+                </code>
+            </div>
+            <br />
+            <h3>Alinhamentos úteis:</h3>
+            <br />
+            <p>
+                <code
+                    ><span class="property-highlight"
+                        >justify-content:</span
+                    ></code
+                >
+                Alinha os itens ao longo do eixo principal (horizontal).
+            </p>
+            <br />
+            <p>
+                <code
+                    ><span class="property-highlight">align-items:</span></code
+                >
+                Alinha os itens ao longo do eixo transversal (vertical).
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.container</span>
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display: flex;</span
+                    ><br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >justify-content:</span
+                    >
+                    center;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >align-items:</span
+                    >
+                    center;<br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p>
+                <span class="text-color-highlight"
+                    >justify-content: center;</span
+                >
+                centraliza os itens horizontalmente.
+            </p>
+            <p>
+                <span class="text-color-highlight">align-items: center;</span>
+                centraliza os itens verticalmente.
+            </p>
+            <br />
+            <p>
+                <strong>Exemplo prático:</strong>Pegue o exemplo abaixo e o
+                execute.
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    --html--
+                    <br />
+                    &nbsp;&lt;div class=&quot;flex-container&quot;&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Item
+                    1&lt;/div&gt;
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Item
+                    2&lt;/div&gt;
+                    <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Item
+                    3&lt;/div&gt;
+                    <br />
+                    &nbsp;&lt;/div&gt; <br />
+                    <br />
+                    --css--
+                    <br />
+                    <span class="element-color-highlight">.flex-container</span>
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">display</span
+                    >: flex; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >justify-content</span
+                    >: space-around; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >align-items</span
+                    >: center; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">height</span
+                    >: 150px; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >background-color</span
+                    >: #f0f0f0; <br />
+                    }<br />
+                    <span class="element-color-highlight"
+                        >.flex-container div</span
+                    >
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >background</span
+                    >: #3498db; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">color</span>:
+                    white; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">padding</span
+                    >: 20px; <br />
+                    }
+                </code>
+            </div>
+            <br />
+            <h1>CSS Grid - Controle total do layout em 2D</h1>
+            <br />
+            <p>
+                O <strong>CSS Grid</strong> permite criar layouts
+                bidimensionais, oferecendo controle total sobre a disposição dos
+                elementos na página. É ideal para estruturas complexas e
+                responsivas, pois possibilita dividir o espaço em linhas e
+                colunas, formando uma grade flexível e adaptável.
+                <br />
+                <strong>Ativando o Grid:</strong>
+                Para ativar o CSS Grid, adicione a propriedade
+                <strong>display: grid;</strong> ao elemento CSS. Isso fará com
+                que todos os elementos filhos se comportem como itens de grid.
+            </p>
+            <br />
+            <p>
+                <code
+                    ><span class="property-highlight"
+                        >display: grid;</span
+                    ></code
+                >
+                ativa o CSS Grid.
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.container</span>
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display:</span
+                    >
+                    grid;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >grid-template-columns:</span
+                    >
+                    1fr 1fr 1fr;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">gap:</span>
+                    10px;<br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p><strong></strong></p>
+            <p>
+                <strong>Exemplo prático:</strong>Pegue o exemplo abaixo e o
+                execute.
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    --html-- <br />
+                    &lt;div class="grid-container"&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Área 1&lt;/div&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Área 2&lt;/div&gt; <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;div&gt;Área 3&lt;/div&gt; <br />
+                    &lt;/div&gt;<br />
+                    <br />
+                    --css-- <br />
+                    <span class="element-color-highlight">.grid-container</span>
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display:</span
+                    >
+                    grid;
+                    <br />
+                    &nbsp;<span class="text-color-highlight">
+                        grid-template-columns:</span
+                    >
+                    repeat(3, 1fr);<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">gap:</span>
+                    20px;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >background-color</span
+                    >: #ecf0f1;<br />
+                    }<br />
+                    <span class="element-color-highlight"
+                        >.grid-container div</span
+                    >
+                    {<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >background</span
+                    >: #2ecc71;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">padding</span
+                    >: 20px;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">color</span>:
+                    white;<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >text-align</span
+                    >: center;<br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Dicas Rápidas:</strong> Conceitos entre Flexbox e Grid
+            </p>
+
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Conceito</th>
+                        <th>Flexbox</th>
+                        <th>Grid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Layout</td>
+                        <td>1 dimensão (linha ou coluna)</td>
+                        <td>2 dimensões (linha e coluna)</td>
+                    </tr>
+                    <tr>
+                        <td>Sintaxe</td>
+                        <td><code>display: flex;</code></td>
+                        <td><code>display: grid;</code></td>
+                    </tr>
+                    <tr>
+                        <td>Controle</td>
+                        <td>Posicionamento flexível</td>
+                        <td>Divisão de áreas e tamanhos</td>
+                    </tr>
+                    <tr>
+                        <td>Ideal para</td>
+                        <td>Menus, cards, alinhamento simples</td>
+                        <td>Layouts de páginas inteiras</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </body>
 </html>

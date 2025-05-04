@@ -146,7 +146,9 @@
             </div>
             <p>
                 <br />
-                <code class="property-highlight">border-radius:</code>
+                <code>
+                    <span class="property-highlight">border-radius:</span>
+                </code>
                 <strong>define o arredondamento das bordas</strong>
                 <br />
             </p>
@@ -254,16 +256,17 @@
             <br />
             <p>
                 Abaixo deste exemplo, está o codigo CSS. Você irá reparar que
-                foi ultilizado width, border para ajustar o estilo.
+                foi utilizado width, border para ajustar o estilo.
                 <br />
-                Além de algumas outras propriedades do css. que voces irão ver a
-                seguir. Começando por: Padding e Margin.
+                Além de algumas outras propriedades do css. que irão ser
+                apreendidas a seguir. Começando por: Padding e Margin.
             </p>
             <br />
             <div>
                 <code class="code-box code-centered">
                     /* Exemplo: Texto dimensionado */ <br />
-                    .dim-text {<br />
+                    <span class="element-color-highlight">.dim-text</span>
+                    {<br />
                     &nbsp;&nbsp;<span class="text-color-highlight"
                         >font-size:</span
                     >
@@ -280,7 +283,8 @@
                     #333;<br />
                     }<br />
                     /* Exemplo: Tabela dimensionada */ <br />
-                    .dim-table {<br />
+                    <span class="element-color-highlight">.dim-table</span>
+                    {<br />
                     &nbsp;&nbsp;<span class="text-color-highlight">width:</span>
                     80%;<br />
                     &nbsp;&nbsp;<span class="text-color-highlight"
@@ -308,7 +312,10 @@
                     >
                     'Helvetica', sans-serif;<br />
                     }<br />
-                    .dim-table th, .dim-table td {<br />
+                    <span class="element-color-highlight"
+                        >.dim-table th, .dim-table td</span
+                    >
+                    {<br />
                     &nbsp;&nbsp;<span class="text-color-highlight"
                         >padding:</span
                     >
@@ -318,7 +325,8 @@
                     >
                     center;<br />
                     }<br />
-                    .dim-table th {<br />
+                    <span class="element-color-highlight">.dim-table th</span>
+                    {<br />
                     &nbsp;&nbsp;<span class="text-color-highlight"
                         >background-color:</span
                     >
@@ -332,13 +340,19 @@
                     >
                     2px solid #ddd;<br />
                     }<br />
-                    .dim-table tr:nth-child(even) {<br />
+                    <span class="element-color-highlight"
+                        >.dim-table tr:nth-child(even)</span
+                    >
+                    {<br />
                     &nbsp;&nbsp;<span class="text-color-highlight"
                         >background-color:</span
                     >
                     #f9f9f9;<br />
                     }<br />
-                    /* Exemplo: Caixa com borda dimensionada */ <br />.dim-box
+                    /* Exemplo: Caixa com borda dimensionada */ <br /><span
+                        class="element-color-highlight"
+                        >.dim-box</span
+                    >
                     {<br />
                     &nbsp;&nbsp;<span class="text-color-highlight">width:</span>
                     80%;<br />
@@ -521,6 +535,28 @@
             </p>
             <p>
                 <br />
+                <code class="property-highlight">justify-content</code>
+                <strong>define o alinhamento horizontal do conteúdo</strong>
+                <br />
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    <span class="text-color-highlight">justify-content:</span>
+                    center;
+                </code>
+            </div>
+            <p>
+                <strong>Obs:</strong> A propriedade
+                <span class="text-color-highlight">justify-content</span> é
+                utilizada em contêineres flexíveis (com display: flex) para
+                alinhar os itens filhos horizontalmente. O valor
+                <strong>center</strong> centraliza os itens no contêiner. Outros
+                valores incluem <strong>flex-start</strong>,
+                <strong>flex-end</strong>, <strong>space-between</strong>, entre
+                outros.
+            </p>
+            <p>
+                <br />
                 <code class="property-highlight">line-height:</code>
                 <strong>define a altura da linha do texto</strong>
                 <br />
@@ -532,11 +568,11 @@
             </div>
             <p>
                 <strong>Obs:</strong> A propriedade
-                <code>line-height</code> define a altura da linha, controlando o
-                espaçamento vertical entre as linhas de texto. No exemplo acima,
-                o valor <strong>1.5</strong> aumenta o espaço, facilitando a
-                leitura. Pode ser definido com número, unidade (px, em) ou
-                porcentagem.
+                <span class="text-color-highlight">line-height</span> define a
+                altura da linha, controlando o espaçamento vertical entre as
+                linhas de texto. No exemplo acima, o valor
+                <strong>1.5</strong> aumenta o espaço, facilitando a leitura.
+                Pode ser definido com número, unidade (px, em) ou porcentagem.
             </p>
             <p>
                 <br />
@@ -552,10 +588,10 @@
             </div>
             <p>
                 <strong>Obs:</strong> A propriedade
-                <code>text-decoration</code> aplica decorações ao texto. No
-                exemplo acima, o valor <strong>underline</strong> sublinha o
-                texto. Outros valores possíveis incluem
-                <strong>overline</strong> (linha acima),
+                <span class="text-color-highlight">text-decoration</span> aplica
+                decorações ao texto. No exemplo acima, o valor
+                <strong>underline</strong> sublinha o texto. Outros valores
+                possíveis incluem <strong>overline</strong> (linha acima),
                 <strong>line-through</strong> (risco no meio) e
                 <strong>none</strong> (sem decoração).
             </p>
@@ -758,7 +794,7 @@
             </div>
             <button class="btn-submit" type="button">Enviar Quiz</button>
             <button class="btn-next">
-                <a href="./modulo5.html" rel="noopener noreferrer">Próximo</a>
+                <a href="./modulo6.html" rel="noopener noreferrer">Próximo</a>
             </button>
             <div class="quiz-result"></div>
         </div>
