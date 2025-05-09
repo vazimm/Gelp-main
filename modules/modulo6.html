@@ -283,6 +283,117 @@
                 </code>
             </div>
             <br />
+            <h3>
+                Complemento: Estruturando Grid com grid-template-columns e
+                grid-template-rows
+            </h3>
+            <br />
+            <p>
+                O CSS Grid permite definir o número de colunas e linhas
+                desejadas, além de especificar o tamanho de cada uma delas. Para
+                isso, utilizamos as propriedades
+                <strong>grid-template-columns</strong> e
+                <strong>grid-template-rows</strong>.
+            </p>
+            <br />
+            <p>
+                <code
+                    ><span class="property-highlight"
+                        >grid-template-columns:</span
+                    ></code
+                >
+                define o número de colunas e seus tamanhos.
+            </p>
+            <br />
+            <p>
+                <strong>Exemplo 1:</strong>
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.grid</span> { <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display: </span
+                    >grid; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >grid-template-columns:</span
+                    >
+                    200px 1fr 1fr; <br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p>
+                No exemplo acima, a primeira coluna terá 200 pixels de largura,
+                enquanto as outras duas ocuparão o restante do espaço disponível
+                (1fr cada). <br />
+                Obs: cada valor representa o tamanho de cada coluna.
+            </p>
+            <br />
+            <p>
+                <strong>Exemplo 2:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.grid</span> { <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display: </span
+                    >grid; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >grid-template-columns:</span
+                    >
+                    repeat(3, 1fr); <br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p>
+                No exemplo acima, o grid terá 3 colunas de tamanhos iguais,
+                ocupando igualmente o espaço disponível. <br />
+                Obs: o repeat(3, 1fr) indica que queremos repetir a coluna 3
+                vezes, cada uma ocupando 1 fração do espaço disponível.
+            </p>
+            <br />
+            <p>
+                <code
+                    ><span class="property-highlight"
+                        >grid-template-rows:</span
+                    ></code
+                >
+                define o número de linhas e seus tamanhos.
+            </p>
+            <br />
+            <p>
+                <strong>Exemplo 1:</strong>
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.grid</span> { <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display: </span
+                    >grid; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >grid-template-rows:</span
+                    >
+                    100px auto 50px; <br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p>
+                No exemplo acima, a primeira linha terá 100 pixels de altura, a
+                segunda ocupará o espaço restante (auto) e a terceira terá 50
+                pixels de altura. <br />
+                Obs: cada valor representa o tamanho de cada linha.
+            </p>
+            <br />
+            <p>
+                <strong>Dica Visual:</strong> Se pensarmos em uma tabela
+                invisível, grid-template-columns define quantas colunas terá
+                essa tabela, e grid-template-rows define quantas linhas.
+            </p>
+            <br />
             <p>
                 <strong>Dicas Rápidas:</strong> Conceitos entre Flexbox e Grid
             </p>
@@ -318,6 +429,158 @@
                     </tr>
                 </tbody>
             </table>
+            <br />
+            <p>
+                <strong>Valores úteis:</strong>
+            </p>
+            <br />
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>px</td>
+                        <td>Tamanho fixo (ex: 200px)</td>
+                    </tr>
+                    <tr>
+                        <td>%</td>
+                        <td>Porcentagem em relação ao elemento pai</td>
+                    </tr>
+                    <tr>
+                        <td>fr</td>
+                        <td>Fração do espaço disponível</td>
+                    </tr>
+                    <tr>
+                        <td>auto</td>
+                        <td>Adapta-se ao conteúdo do elemento</td>
+                    </tr>
+                    <tr>
+                        <td>minmax()</td>
+                        <td>Define valor mínimo e máximo para a área</td>
+                    </tr>
+                    <tr>
+                        <td>repeat()</td>
+                        <td>Atalho para repetir valores (ex: 3 colunas)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <h1>Atividade Prática – Layout com Flexbox e Grid</h1>
+            <br />
+            <p>
+                <strong>Objetivo:</strong> <br />
+                Criar uma estrutura de página simples, aplicando Flexbox para
+                alinhar um cabeçalho e um rodapé, e CSS Grid para organizar a
+                área de conteúdo em colunas.
+            </p>
+            <br />
+            <h3>Desafio: "Página de Apresentação Pessoal"</h3>
+            <br />
+            <p>Crie uma página HTML com o seguinte layout:</p>
+            <div class="code-box code-centered">
+                <pre>
+                    +------------------------------+ <br>
+                    |         Cabeçalho            |  ← Flexbox (centralizado) <br>
+                    +------------------------------+ <br> 
+                    |  Foto |  Sobre mim | Contato |  ← Grid (3 colunas) <br> 
+                    +------------------------------+ <br>
+                    |         Rodapé               |  ← Flexbox (centralizado) <br>
+                    +------------------------------+ <br>
+                </pre>
+            </div>
+            <br />
+            <h1>Requisitos técnicos</h1>
+            <h3>Estrutura:</h3>
+            <p>
+                Crie dois arquivos: index.html e estilo.css <br />
+                <strong>No HTML:</strong>
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        Um elemento
+                        <code class="code-custom">&lt;header&gt;</code>
+                        para o cabeçalho
+                    </li>
+                    <li>
+                        Uma
+                        <code class="code-custom"
+                            >&lt;section class="conteudo"&gt;</code
+                        >
+                        com 3 <code class="code-custom">&lt;div&gt;</code>:
+                        <ul>
+                            <li>
+                                Foto (pode usar uma
+                                <code class="code-custom">&lt;img&gt;</code>)
+                            </li>
+                            <li>Texto de apresentação</li>
+                            <li>Informações de contato</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Um
+                        <code class="code-custom">&lt;footer&gt;</code>
+                        com uma frase simples
+                    </li>
+                </ul>
+                <p><strong>Estilização:</strong></p>
+                <ul class="explanation">
+                    <li>
+                        1. Use Flexbox no
+                        <code class="code-custom">&lt;header&gt;</code> e no
+                        <code class="code-custom">&lt;footer&gt;</code> para
+                        centralizar o conteúdo.
+                    </li>
+                    <li>
+                        2. Use Grid na
+                        <code class="code-custom">.conteudo</code> para criar 3
+                        colunas.
+                    </li>
+                    <li>
+                        3. Defina uma largura máxima de 900px e centralize a
+                        página (margin: auto).
+                    </li>
+                    <li>
+                        4. Dê um fundo claro ao conteúdo e destaque visual aos
+                        blocos (ex: com borda, sombra, padding).
+                    </li>
+                    <li>Adicione gap entre as colunas do Grid.</li>
+                    <li>
+                        5. Faça com que, em telas pequenas, as colunas virem uma
+                        abaixo da outra (responsividade com
+                        grid-template-columns adaptativo).
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p><strong>Dica:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    <span class="element-color-highlight">.conteudo</span> {
+                    <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >display:</span
+                    >
+                    grid; <br />
+                    &nbsp;&nbsp;<span class="text-color-highlight"
+                        >grid-template-columns:</span
+                    >
+                    repeat(auto-fit, minmax(250px, 1fr));<br />
+                    &nbsp;&nbsp;<span class="text-color-highlight">gap:</span>
+                    20px;<br />
+                    }
+                </code>
+            </div>
+            <p>
+                <strong>Obs:</strong>O auto-fit é usado para ajustar o número de
+                colunas automaticamente, enquanto o minmax(250px, 1fr) garante
+                que cada coluna tenha no mínimo 250px e ocupe o espaço restante
+                disponível. <br />
+            </p>
         </section>
     </body>
 </html>

@@ -133,13 +133,18 @@ section p {
     /* Aumenta o tamanho do texto */
 }
 
+.explanation li ul {
+    margin-left: 20px;
+    /* Espaçamento apenas à esquerda dos subitens */
+}
+
 .code-custom {
     font-family: "Courier New", monospace;
-    font-size: 1.2em;
+    font-size: 1.10em;
     background-color: #bac1c7;
     color: #24292e;
-    padding: 0.2em 0.4em;
-    border-radius: 8px;
+    padding: 0.14em 0.24em;
+    border-radius: 6px;
     white-space: pre-wrap;
 }
 
