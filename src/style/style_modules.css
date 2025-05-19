@@ -441,3 +441,12 @@ footer p {
     text-decoration: none;
     color: inherit;
 }
+
+.plain-link {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Usa a cor do elemento pai */
+    cursor: default;
+    /* Remove o cursor pointer */
+}

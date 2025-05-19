@@ -1,11 +1,717 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introdução ao JavaScript</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Introdução ao JavaScript</title>
+        <script src="/src/script/script.js" defer></script>
+        <script src="/src/script/quiz.js" defer></script>
+        <script src="/src/script/botao_instrutor.js" defer></script>
+        <link rel="stylesheet" href="/src/style/style_modules.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="/src/img/logo.png" alt="Logo" />
+                </div>
+                <ul>
+                    <li><a href="/Index.html">Página inicial</a></li>
+                    <li><a href="/Index.html#tools">Ferramentas</a></li>
+                    <li><a href="/modules/modulo6.html">Anterior</a></li>
+                    <li><a href="/modules/modulo8.html">Próximo</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="intro">
+            <h1>Módulo 7: Introdução ao JavaScript</h1>
+            <br />
+            <h1>O que é JavaScript?</h1>
+            <br />
+            <p>
+                JavaScript é uma linguagem de programação que roda nos
+                navegadores e serve para tornar as páginas web dinâmicas. Com
+                ele, podemos:
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>Reagir a cliques e eventos do usuário</li>
+                    <li>Alterar conteúdo da página sem recarregá-la</li>
+                    <li>Validar formulários</li>
+                    <li>Criar efeitos e animações</li>
+                    <li>Manipular dados</li>
+                </ul>
+            </div>
+            <br />
+            <p><strong>É um dos 3 pilares da web:</strong></p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>HTML = Estrutura</li>
+                    <li>CSS = Estilo</li>
+                    <li>JavaScript = comportamento/interatividade</li>
+                </ul>
+            </div>
+            <br />
+            <h1>Formas de Usar JavaScript</h1>
+            <br />
+            <p>Existem três formas de usar JavaScript em uma página web:</p>
+            <br />
+            <h3>Inline (direto no HTML)</h3>
+            <p>
+                O JavaScript pode ser escrito diretamente dentro de uma tag
+                HTML. <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    &lt;button onclick="alert('Olá, mundo!')"&gt;Clique
+                    aqui&lt;/button&gt;
+                </code>
+            </div>
+            <p>
+                Nesse exemplo, quando o botão é clicado, uma mensagem pop-up
+                aparece com o texto "Olá, mundo!".
+            </p>
+            <br />
+            <h3>Interno (dentro da tag &lt;head&gt;)</h3>
+            <p>
+                O JavaScript pode ser escrito dentro de uma tag &lt;script&gt;
+                no cabeçalho da página. <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    &lt;script&gt; alert('Olá, mundo!'); &lt;/script&gt;
+                </code>
+            </div>
+            <p>
+                Nesse exemplo, quando a página é carregada, uma mensagem de
+                alerta aparece com o texto "Olá, mundo!".
+            </p>
+            <br />
+            <h3>Externo (em um arquivo separado)</h3>
+            <p>
+                O JavaScript pode ser escrito em um arquivo separado com a
+                extensão .js e referenciado na página HTML. <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code> &lt;script src="script.js"&gt;&lt;/script&gt; </code>
+            </div>
+            <p>
+                Nesse exemplo, o arquivo script.js contém o código JavaScript
+                que será executado na página.
+            </p>
+            <br />
+            <p>Referenciamento do arquivo JavaScript:</p>
+            <br />
+            <p>
+                Podemos incluir um arquivo JavaScript em uma página HTML usando
+                a tag &lt;script&gt;, que pode ser posicionada em diferentes
+                partes do documento:
+            </p>
+            <br />
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        No <code class="code-custom">&lt;head&gt;</code>: O
+                        script é carregado
+                        <strong
+                            >antes da renderização completa do conteúdo
+                            HTML</strong
+                        >, Isso pode causar lentidão ou até erros, caso o script
+                        tente acessar elementos da página que ainda não foram
+                        carregados.
+                    </li>
+                    <li>
+                        No <code class="code-custom">&lt;body&gt;</code>: O
+                        script é carregado
+                        <strong>após o carregamento completo do HTML</strong
+                        >,Essa é a forma mais segura e eficiente, pois evita que
+                        o script tente acessar elementos inexistentes.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>
+                ⚠️ Importante: Scripts colocados no
+                <code class="code-custom">&lt;head&gt;</code> são lidos antes do
+                conteúdo HTML aparecer na tela. <br />
+                Isso pode causar lentidão ou falhas no código se ele tentar
+                manipular elementos que ainda não existem.
+            </p>
+            <br />
+            <h1>Console do Navegador:</h1>
+            <p>
+                O console é uma ferramenta disponível nos navegadores que
+                permite
+                <strong>testar, depurar e visualizar informações</strong> sem
+                exibi-las diretamente na página HTML.
+                <br />
+                Usamos o método
+                <code class="code-custom">console.log()</code> para enviar
+                mensagens ao console. <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code> console.log('Essa mensagem aparece no console!'); </code>
+            </div>
+            <h3>Outros métodos úteis do console:</h3>
+            <br />
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        <code class="code-custom">console.error()</code>: exibe
+                        mensagens de erro, geralmente destacadas em vermelho.
+                    </li>
+                    <li>
+                        <code class="code-custom">console.warn()</code>: exibe
+                        mensagens de aviso, normalmente em amarelo.
+                    </li>
+                    <li>
+                        <code class="code-custom">console.table()</code>: exibe
+                        dados em formato de tabela, útil para visualizar arrays
+                        e objetos de forma organizada.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>
+                <strong>Dica:</strong> Para abrir o console, pressione
+                <strong>F12</strong> ou clique com o botão direito na página e
+                selecione <strong>"Inspecionar" > Aba Console.</strong>
+            </p>
+            <br />
+            <h1>Variáveis em JavaScript</h1>
+            <br />
+            <p>
+                Variáveis são <strong>espaços na memória</strong> usados para
+                armazenar informações que podem ser manipuladas durante a
+                execução do código. <br />
+                <br />
+                Podemos criar variáveis com as palavras-chave
+                <code class="code-custom">var</code>,
+                <code class="code-custom">let</code> ou
+                <code class="code-custom">const</code>. <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    let nome = 'João'; <br />
+                    const idade = 25; <br />
+                    var cidade = 'São Paulo';
+                </code>
+            </div>
+            <br />
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Palavra-chave</th>
+                        <th>Escopo</th>
+                        <th>Pode ser redeclarada?</th>
+                        <th>Pode ser reatribuída?</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>var</td>
+                        <td>Global ou função</td>
+                        <td>✅ Sim</td>
+                        <td>✅ Sim</td>
+                        <td>Pode causar problemas com escopo</td>
+                    </tr>
+                    <tr>
+                        <td>let</td>
+                        <td>Bloco</td>
+                        <td>❌ Não</td>
+                        <td>✅ Sim</td>
+                        <td>Mais segura que var</td>
+                    </tr>
+                    <tr>
+                        <td>const</td>
+                        <td>Bloco</td>
+                        <td>❌ Não</td>
+                        <td>❌ Não</td>
+                        <td>Ideal para valores fixos</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <p>
+                Prefira usar <code class="code-custom">let</code> e
+                <code class="code-custom">const</code> no lugar de
+                <code class="code-custom">var</code>, pois oferecem mais
+                controle sobre o escopo e evitam erros de redeclaração
+                acidental.
+            </p>
+            <br />
+            <h3>Escopo de Variável:</h3>
+            <br />
+            <p>
+                O escopo de uma variável define
+                <strong>onde ela pode ser acessada ou utilizada</strong> dentro
+                do código. Em JavaScript, existem três principais tipos de
+                escopo:
+            </p>
+            <br />
+            <p>
+                <strong>Global:</strong> Variáveis declaradas fora de qualquer
+                função ou bloco. Podem ser acessadas em qualquer parte do
+                código. <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    let nome = 'João'; // variável global <br />
+                    function exibirNome() { <br />
+                    &nbsp;&nbsp; console.log(nome); // acessa a variável global
+                    <br />
+                    }
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Local:</strong> Variáveis declaradas dentro de uma
+                função. Só podem ser acessadas dentro dessa função. <br /><br />
+                <strong>Exemplo: </strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    function exibirIdade() { <br />
+                    &nbsp;&nbsp; let idade = 25; // variável local <br />
+                    &nbsp;&nbsp; console.log(idade); // acessa a variável local
+                    <br />
+                    } <br />
+                    exibirIdade(); // chama a função <br />
+                    console.log(idade); // erro: idade não está definida fora da
+                    função
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Bloco:</strong> Variáveis declaradas dentro de chaves {}
+                e só podem ser acessadas dentro desse bloco. <br /><br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    if (true) { <br />
+                    &nbsp;&nbsp; let cidade = 'São Paulo'; // Escopo de bloco
+                    <br />
+                    &nbsp;&nbsp; var clima = 'Nublado'; // ⚠️ var ignora o bloco
+                    <br />
+                    &nbsp;&nbsp; console.log(cidade); // acessa a variável de
+                    bloco <br />
+                    } <br />
+                    console.log(cidade); // erro: cidade não está definida
+                    <br />
+                    console.log(clima); // saída: Nublado (acessa a variável
+                    global)
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Observação:</strong> O escopo é essencial para
+                <strong>evitar conflitos de nomes</strong> e
+                <strong
+                    >proteger variáveis que não devem ser acessadas
+                    globalmente</strong
+                >.
+            </p>
+            <br />
+            <p><strong>Resumo:</strong></p>
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Escopo</th>
+                        <th>Acessível onde?</th>
+                        <th>Suporta let/const?</th>
+                        <th>var respeita?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Global</td>
+                        <td>Em qualquer lugar</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                    </tr>
+                    <tr>
+                        <td>Função</td>
+                        <td>Dentro da função apenas</td>
+                        <td>Sim</td>
+                        <td>Sim</td>
+                    </tr>
+                    <tr>
+                        <td>Bloco</td>
+                        <td>Dentro de {} apenas</td>
+                        <td>✅ Sim</td>
+                        <td>❌ Não</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <h3>Tipos de Dados em JavaScript:</h3>
+            <br />
+            <p>
+                Em JavaScript, existem diferentes tipos de dados que podem ser
+                armazenados em variáveis.
+            </p>
+            <br />
+            <p><strong>Os principais tipos de dados são:</strong></p>
+            <br />
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                        <th>Exemplo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Number</td>
+                        <td>Representa números inteiros ou decimais</td>
+                        <td>
+                            let idade = 25; <br />
+                            let tamanho = 1.75
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>Representa texto entre aspas simples ou duplas</td>
+                        <td>let nome = 'João';</td>
+                    </tr>
+                    <tr>
+                        <td>Boolean</td>
+                        <td>Representa verdadeiro (true) ou falso (false)</td>
+                        <td>let ativo = true;</td>
+                    </tr>
+                    <tr>
+                        <td>Null</td>
+                        <td>Representa a ausência intencional de valor</td>
+                        <td>let valor = null;</td>
+                    </tr>
+                    <tr>
+                        <td>Undefined</td>
+                        <td>Representa uma variável sem valor definido</td>
+                        <td>let resultado;</td>
+                    </tr>
+                    <tr>
+                        <td>Object</td>
+                        <td>Representa uma coleção de pares chave-valor</td>
+                        <td>let pessoa = { nome: "João", idade: 25 };</td>
+                    </tr>
+                    <tr>
+                        <td>Array</td>
+                        <td>Representa uma lista de valores</td>
+                        <td>let frutas = ["maçã", "banana", "laranja"];</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <h1>Funções</h1>
+            <br />
+            <p>
+                Funções são blocos de código que podem ser reutilizados em
+                diferentes partes do programa. Elas podem receber parâmetros e
+                retornar valores.
+                <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    function somar(a, b) { <br />
+                    &nbsp;&nbsp; return a + b; <br />
+                    } <br />
+                    let resultado = somar(5, 10); <br />
+                    console.log(resultado); // saída: 15
+                </code>
+            </div>
+            <br />
+            <p>
+                Nesse exemplo, a função <code class="code-custom">somar</code>
+                recebe dois parâmetros (a e b) e retorna a soma deles. Em
+                seguida, chamamos a função e armazenamos o resultado na variável
+                <code class="code-custom">resultado</code>. <br />
+                <strong>Parâmetros:</strong> São valores que podem ser passados
+                para a função quando ela é chamada.
+            </p>
+            <br />
+            <p>
+                <strong>Explicação simples:</strong> Funções agrupam comandos
+                que podem ser chamados com um nome.
+            </p>
+            <br />
+            <p>
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    function exibirMensagem() { <br />
+                    &nbsp;&nbsp; console.log('Olá, mundo!'); <br />
+                    } <br />
+                    exibirMensagem(); // chama a função
+                </code>
+            </div>
+            <br />
+            <p>
+                Nesse exemplo, a função
+                <code class="code-custom">exibirMensagem</code> exibe a mensagem
+                "Olá, mundo!" no console quando chamada.
+            </p>
+            <br />
+            <h3>Eventos</h3>
+            <br />
+            <p>
+                Eventos são ações que ocorrem em uma página web, como cliques,
+                teclas pressionadas ou carregamento da página. Podemos usar
+                JavaScript para reagir a esses eventos e executar funções
+                específicas.
+                <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    let botao = document.querySelector('button'); <br />
+                    botao.addEventListener('click', function() { <br />
+                    &nbsp;&nbsp; alert('Botão clicado!'); <br />
+                    });
+                </code>
+            </div>
+            <br />
+            <p>
+                Nesse exemplo, adicionamos um botão clicável na página. Quando o
+                usuário clicar no botão, uma mensagem de alerta será exibida com
+                o texto "Botão clicado!". <br />
+            </p>
+            <br />
+            <p>
+                <em
+                    >👉 Este é apenas um exemplo básico de eventos. Você verá
+                    mais sobre isso no Módulo 9.</em
+                >
+            </p>
+            <p>
+                <strong>Link:</strong>
+                <a href="/modules/modulo9.html" class="plain-link"
+                    ><u>Conteúdo completo no módulo 9.</u></a
+                >
+            </p>
+            <br />
+            <h3>Alterar conteúdo da página com JavaScript</h3>
+            <br />
+            <p>
+                Podemos usar JavaScript para alterar o conteúdo de elementos
+                HTML na página. Isso é útil para criar páginas dinâmicas e
+                interativas.
+                <br />
+                <br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    let paragrafo = document.querySelector('p'); <br />
+                    paragrafo.innerHTML = 'Novo conteúdo do parágrafo';
+                </code>
+            </div>
+            <br />
+            <p>
+                Nesse exemplo, selecionamos um parágrafo na página e alteramos
+                seu conteúdo para "Novo conteúdo do parágrafo".
+                <br />
+                <br />
+                <strong>Observação:</strong> O método
+                <code class="code-custom">innerHTML</code> permite adicionar
+                HTML dentro do elemento selecionado. Isso pode ser útil para
+                criar conteúdo dinâmico, mas deve ser usado com cuidado para
+                evitar problemas de segurança, como
+                <strong>injeção de código</strong>.
+            </p>
+            <br />
+            <p>
+                <em
+                    >👉 Este é apenas um exemplo básico de Manipulação do HTML.
+                    Você verá mais sobre isso no Módulo 8.</em
+                >
+            </p>
+            <p>
+                <strong>Link:</strong>
+                <a href="/modules/modulo8.html" class="plain-link"
+                    ><u>Conteúdo completo no módulo 8.</u></a
+                >
+            </p>
+            <br />
+            <h1>Exemplo Prático:</h1>
+            <br />
+            <p>
+                Vamos trabalhar com um exemplo prático onde o usuário pode
+                clicar em um botão para alterar o conteúdo de um parágrafo na
+                página.
+                <br />
+                <br />
+                <strong>HTML:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    &lt;button id="meuBotao"&gt;Clique aqui&lt;/button&gt;
+                    <br />
+                    &lt;p id="meuParagrafo"&gt;Texto original&lt;/p&gt;
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>JavaScript:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    let botao = document.getElementById('meuBotao'); <br />
+                    let paragrafo = document.getElementById('meuParagrafo');
+                    <br />
+                    botao.addEventListener('click', function() { <br />
+                    &nbsp;&nbsp; paragrafo.innerHTML = 'Texto alterado!'; <br />
+                    });
+                </code>
+            </div>
+            <br />
+            <p>
+                Nesse exemplo, quando o usuário clica no botão, o texto do
+                parágrafo é alterado para "Texto alterado!".
+                <br />
+                <br />
+                <strong>Observação:</strong> O método
+                <code class="code-custom">getElementById()</code> é usado para
+                selecionar elementos HTML com base em seu ID. Isso é útil para
+                manipular elementos específicos na página.
+            </p>
+            <br />
+        </section>
+        <div class="quiz">
+            <h2>Quiz</h2>
+            <div class="question" data-correct="c">
+                <p>
+                    1. Qual a função principal do JavaScript em uma página web?
+                </p>
+                <br />
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="a" />
+                            A) Criar a estrutura da página
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="b" />
+                            B) Aplicar estilos visuais
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="c" />
+                            C) Tornar a página interativa
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="c">
+                <p>
+                    2. Qual comando é usado para exibir mensagens no console do
+                    navegador?
+                </p>
+                <br />
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="a" />
+                            A) console.write()
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="b" />
+                            B) console.error()
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="c" />
+                            C) console.log()
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="a">
+                <p>3. Quais são as diferenças entre let e const?</p>
+                <br />
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="a" />
+                            A) let permite reatribuição; const não permite
+                            alterações
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="b" />
+                            B) let e const funcionam exatamente da mesma forma
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="c" />
+                            C) let é exclusivamente para números; const para
+                            textos
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="b">
+                <p>4. O que faz a função alert("Olá") em JavaScript?</p>
+                <br />
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q4" value="a" />
+                            A) Exibe a mensagem no console do navegador
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q4" value="b" />
+                            B) Exibe uma janela pop-up com a mensagem "Olá"
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q4" value="c" />
+                            C) Altera o conteúdo do HTML da página
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn-submit" type="button">Enviar Quiz</button>
+            <button class="btn-next">
+                <a href="./modulo8.html" rel="noopener noreferrer">Próximo</a>
+            </button>
+            <div class="quiz-result"></div>
+        </div>
+    </body>
+    <footer>
+        <p>
+            &copy; 2025 Curso Iniciando na Programação. Todos os direitos
+            reservados.
+        </p>
+        <p>Desenvolvido por [Nome Do Grupo]</p>
+    </footer>
 </html>
