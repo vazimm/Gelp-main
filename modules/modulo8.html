@@ -23,5 +23,599 @@
                 </ul>
             </nav>
         </header>
+        <section class="intro">
+            <h1>Módulo 8: Manipulação do DOM (Document Object Model)</h1>
+            <br />
+            <h3>Objetivo do Módulo</h3>
+            <p>
+                Entender como acessar, modificar e interagir com elementos HTML
+                usando JavaScript por meio do DOM, tornando as páginas mais
+                dinâmicas e responsivas a eventos do usuário.
+            </p>
+            <br />
+            <h3>O que é DOM?</h3>
+            <br />
+            <p>
+                O DOM (Document Object Model) é uma interface de programação que
+                representa a estrutura de um documento HTML ou XML como uma
+                árvore de objetos. Cada elemento, atributo e texto no documento
+                é representado como um nó na árvore, permitindo que linguagens
+                de programação, como JavaScript, acessem e manipulem esses
+                elementos de forma dinâmica.
+                <br />
+                <br />
+                O DOM é fundamental para a criação de páginas web interativas,
+                pois permite que os desenvolvedores acessem e modifiquem, em
+                tempo real, o conteúdo, a estrutura e o estilo de um documento
+                HTML. Isso possibilita a criação de efeitos visuais, validação
+                de formulários, manipulação de eventos, entre outras
+                funcionalidades.
+                <br />
+                <br />
+                Essa estrutura é hierárquica, com o elemento raiz sendo o objeto
+                document. Cada elemento HTML é representado como um nó filho
+                desse objeto, e esses nós podem conter outros nós filhos,
+                formando a estrutura em árvore. Por exemplo, um elemento
+                &lt;div&gt; pode conter vários elementos &lt;p&gt;, &lt;img&gt;,
+                etc., que são considerados nós filhos do &lt;div&gt;.
+                <br />
+                <br />
+                O DOM é uma interface independente de linguagem, ou seja, pode
+                ser acessado e manipulado por diferentes linguagens de
+                programação. No entanto, o JavaScript é a linguagem mais comum
+                para interagir com o DOM em páginas web. Com ele, os
+                desenvolvedores podem adicionar, remover ou modificar elementos
+                HTML, alterar estilos CSS, responder a eventos do usuário (como
+                cliques e teclas pressionadas) e muito mais.
+                <br /><br />
+                <strong>Exemplo de estrutura de DOM:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <pre>
+            document
+            └── html
+            ├── head
+            │   ├── meta (charset="UTF-8")
+            │   ├── meta (name="viewport")
+            │   ├── title
+            │   ├── link (stylesheet)
+            │   └── script (defer)
+            └── body
+                ├── header
+                │   └── nav
+                │       ├── div.logo
+                │       │   └── img (Logo)
+                │       └── ul
+                │           ├── li > a ("Página inicial")
+                │           ├── li > a ("Ferramentas")
+                │           ├── li > a ("Anterior")
+                │           └── li > a ("Próximo")
+                ├── section.intro
+                │   ├── h1 ("Módulo 8: Manipulação do DOM")
+                │   ├── h3 ("Objetivo do Módulo")
+                │   ├── p (Descrição da funcionalidade do módulo)
+                │   ├── h3 ("O que é DOM?")
+                │   ├── p (Explicação sobre DOM e sua importância)
+                │   └── div.code-box.code-centered
+                │       └── code (Exemplo da estrutura DOM)
+                └── footer
+                └── p (Informações de rodapé)
+            </pre
+                >
+            </div>
+            <br />
+            <h3>Como funciona o DOM?</h3>
+            <br />
+            <p>
+                O DOM funciona como uma interface entre o documento HTML e o
+                código JavaScript. Quando um navegador carrega uma página web,
+                ele cria uma representação em memória do documento HTML, que é a
+                árvore DOM. Essa árvore é composta por nós, onde cada nó
+                representa um elemento, atributo ou texto no documento.
+                <br />
+                <br />
+                O objeto <code class="code-custom">document</code> é fornecido
+                automaticamente pelo navegador e representa a página web
+                carregada. A partir dele, é possível acessar todos os elementos
+                HTML da página. Por exemplo, ao usar
+                <code class="code-custom"
+                    >document.getElementById("meuElemento")</code
+                >, estamos dizendo ao JavaScript para procurar dentro desse
+                objeto chamado <code class="code-custom">document</code> um
+                elemento com o ID correspondente.
+                <br />
+                <br />
+                O JavaScript pode acessar e manipular essa árvore usando métodos
+                e propriedades fornecidos pela API do DOM. Por exemplo, você
+                pode usar métodos como
+                <code class="code-custom">getElementById</code>,
+                <code class="code-custom">querySelector</code>,
+                <code class="code-custom">createElement</code>,
+                <code class="code-custom">appendChild</code>, entre outros, para
+                selecionar, criar, adicionar ou remover elementos na árvore DOM.
+                <br />
+                <br />
+                Além disso, o DOM também permite que você adicione ouvintes de
+                eventos a elementos HTML. Isso significa que você pode reagir a
+                ações do usuário, como cliques, pressionamentos de tecla e
+                movimentos do mouse. Quando um evento ocorre, você pode executar
+                uma função JavaScript para manipular o DOM de acordo com a ação
+                do usuário.
+                <br />
+                <br />
+                O DOM é dinâmico, o que significa que você pode modificar a
+                estrutura e o conteúdo da página em tempo real. Por exemplo,
+                você pode adicionar novos elementos, alterar o texto de um
+                elemento existente, mudar estilos CSS ou até mesmo remover
+                elementos da página. Essas alterações são refletidas
+                imediatamente na interface do usuário, proporcionando uma
+                experiência interativa e responsiva.
+                <br /><br />
+                Em resumo, o DOM funciona como uma ponte entre o documento HTML
+                e o código JavaScript, permitindo que os desenvolvedores
+                acessem, manipulem e respondam a eventos em tempo real. Essa
+                capacidade de interação dinâmica é fundamental para criar
+                páginas web modernas e envolventes.
+            </p>
+            <br />
+            <h3>Selecionando elementos no DOM</h3>
+            <br />
+            <p>
+                Para selecionar elementos no DOM, você pode usar vários métodos
+                disponíveis na API do DOM. Aqui estão alguns dos métodos mais
+                comuns:
+            </p>
+            <br />
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        <code class="code-custom">getElementById(id)</code>:
+                        Seleciona um elemento com o ID especificado.
+                    </li>
+                    <li>
+                        <code class="code-custom"
+                            >getElementsByClassName(className)</code
+                        >: Seleciona todos os elementos com a classe
+                        especificada.
+                    </li>
+                    <li>
+                        <code class="code-custom"
+                            >getElementsByTagName(tagName)</code
+                        >: Seleciona todos os elementos com a tag especificada.
+                    </li>
+                    <li>
+                        <code class="code-custom">querySelector(selector)</code
+                        >: Seleciona o primeiro elemento que corresponde ao
+                        seletor CSS especificado.
+                    </li>
+                    <li>
+                        <code class="code-custom"
+                            >querySelectorAll(selector)</code
+                        >: Seleciona todos os elementos que correspondem ao
+                        seletor CSS especificado.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>Aqui estão alguns exemplos de como usar esses métodos:</p>
+            <br />
+            <p><strong>Exemplo 1:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elemento = document.getElementById("meuElemento");
+                    <br />
+                    console.log(elemento);
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando um elemento com o ID
+                "meuElemento" e armazenando-o na variável
+                <code class="code-custom">elemento</code>. Em seguida, estamos
+                exibindo o elemento no console.
+            </p>
+            <br />
+            <p><strong>Exemplo 2:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elementos =
+                    document.getElementsByClassName("minhaClasse");
+                    <br />
+                    console.log(elementos);
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando todos os elementos com a
+                classe "minhaClasse" e armazenando-os na variável
+                <code class="code-custom">elementos</code>. Em seguida, estamos
+                exibindo os elementos no console. Observe que
+                <code class="code-custom">getElementsByClassName</code> retorna
+                uma coleção de elementos, então você pode iterar sobre eles
+                usando um loop.
+            </p>
+            <br />
+            <p><strong>Exemplo 3:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const primeiroElemento =
+                    document.querySelector(".minhaClasse");
+                    <br />
+                    console.log(primeiroElemento);
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando o primeiro elemento que
+                corresponde ao seletor CSS ".minhaClasse" e armazenando-o na
+                variável <code class="code-custom">primeiroElemento</code>. Em
+                seguida, estamos exibindo o elemento no console. O método
+                <code class="code-custom">querySelector</code> é muito útil
+                quando você deseja selecionar um único elemento com base em um
+                seletor CSS.
+            </p>
+            <br />
+            <p><strong>Exemplo 4:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elementos = document.querySelectorAll("p");
+                    <br />
+                    elementos.forEach((elemento) => {
+                    <br />console.log(elemento); });
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando todos os elementos
+                <code class="code-custom">&lt;p&gt;</code> na página e
+                armazenando-os na variável
+                <code class="code-custom">elementos</code>. Em seguida, usamos o
+                método <code class="code-custom">forEach</code> para iterar
+                sobre cada elemento e exibi-los no console.
+                <br />
+                Esses métodos de seleção são essenciais para acessar e manipular
+                elementos no DOM. Você pode usá-los para adicionar ouvintes de
+                eventos, alterar estilos, modificar o conteúdo e muito mais. A
+                escolha do método depende do que você deseja selecionar e como
+                deseja interagir com os elementos.
+            </p>
+            <br />
+            <h3>Manipulando elementos no DOM</h3>
+            <br />
+            <p>
+                Depois de selecionar elementos no DOM, você pode manipulá-los de
+                várias maneiras. Aqui estão algumas das operações mais comuns:
+                <br />
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        <code class="code-custom">innerHTML</code>: Altera o
+                        conteúdo HTML interno de um elemento.
+                    </li>
+                    <li>
+                        <code class="code-custom">textContent</code>: Altera o
+                        conteúdo de texto de um elemento.
+                    </li>
+                    <li>
+                        <code class="code-custom"
+                            >setAttribute(attr, value)</code
+                        >: Define um atributo para um elemento.
+                    </li>
+                    <li>
+                        <code class="code-custom">classList.add(className)</code
+                        >: Adiciona uma classe a um elemento.
+                    </li>
+                    <li>
+                        <code class="code-custom"
+                            >classList.remove(className)</code
+                        >: Remove uma classe de um elemento.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>Aqui estão alguns exemplos de como usar essas operações:</p>
+            <br />
+            <p><strong>Exemplo 1:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elemento = document.getElementById("meuElemento");
+                    <br />
+                    elemento.innerHTML = "Novo conteúdo HTML";
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando um elemento com o ID
+                "meuElemento" e alterando seu conteúdo HTML interno para "Novo
+                conteúdo HTML".
+            </p>
+            <br />
+            <p><strong>Exemplo 2:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elemento = document.getElementById("meuElemento");
+                    <br />
+                    elemento.textContent = "Novo conteúdo de texto";
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando um elemento com o ID
+                "meuElemento" e alterando seu conteúdo de texto para "Novo
+                conteúdo de texto". Isso é útil quando você deseja alterar
+                apenas o texto exibido, sem afetar o HTML interno.
+            </p>
+            <br />
+            <p><strong>Exemplo 3:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elemento = document.getElementById("meuElemento");
+                    <br />
+                    elemento.setAttribute("data-atributo", "valor");
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando um elemento com o ID
+                "meuElemento" e definindo um atributo personalizado chamado
+                "data-atributo" com o valor "valor". Isso é útil para armazenar
+                informações adicionais em elementos HTML.
+            </p>
+            <br />
+            <p><strong>Exemplo 4:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elemento = document.getElementById("meuElemento");
+                    <br />
+                    elemento.classList.add("novaClasse");
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando um elemento com o ID
+                "meuElemento" e adicionando uma nova classe chamada "novaClasse"
+                a ele. Isso é útil para aplicar estilos CSS adicionais a um
+                elemento.
+            </p>
+            <br />
+            <p><strong>Exemplo 5:</strong></p>
+            <div class="code-box code-centered">
+                <code>
+                    const elemento = document.getElementById("meuElemento");
+                    <br />
+                    elemento.classList.remove("classeExistente");
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos selecionando um elemento com o ID
+                "meuElemento" e removendo uma classe existente chamada
+                "classeExistente" dele. Isso é útil para remover estilos CSS
+                aplicados anteriormente.
+            </p>
+            <br />
+            <p>
+                Essas operações de manipulação de elementos são essenciais para
+                criar páginas web dinâmicas e interativas. Você pode usá-las
+                para alterar o conteúdo, o estilo e a estrutura dos elementos em
+                resposta a ações do usuário ou eventos na página.
+                <br /><br />
+            </p>
+            <h3>Exemplo Prático</h3>
+            <br />
+            <p>
+                Vamos criar um exemplo prático onde adicionamos um novo elemento
+                à página e alteramos seu conteúdo. Aqui está o código:
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    const novoElemento = document.createElement("p");
+                    <br />
+                    novoElemento.textContent = "Este é um novo parágrafo.";
+                    <br />
+                    document.body.appendChild(novoElemento);
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, estamos criando um novo elemento
+                <code class="code-custom">&lt;p&gt;</code> usando o método
+                <code class="code-custom">createElement</code>. Em seguida,
+                definimos seu conteúdo de texto e o adicionamos ao final do
+                corpo do documento usando o método
+                <code class="code-custom">appendChild</code>.
+                <br />
+                Isso adicionará um novo parágrafo à página com o texto "Este é
+                um novo parágrafo." Você pode experimentar esse código em seu
+                próprio projeto para ver como funciona a criação e adição de
+                novos elementos ao DOM.
+            </p>
+            <br />
+            <h3>Exemplo prático 2</h3>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    &lt;p id="mensagem"&gt;Mensagem original&lt;/p&gt;
+                    <br />
+                    &lt;button
+                    onclick="alterarMensagem()"&gt;Clique&lt;/button&gt;
+                    <br />
+                    &lt;script&gt;
+                    <br />function alterarMensagem() { <br />
+                    const elemento = document.querySelector("#mensagem"); <br />
+                    elemento.innerText = "Você clicou no botão!"; <br />}
+                    <br />&lt;/script&gt;
+                </code>
+            </div>
+            <br />
+            <p>
+                Neste exemplo, temos um parágrafo com o ID "mensagem" e um
+                botão. Quando o botão é clicado, a função
+                <code class="code-custom">alterarMensagem</code> é chamada,
+                selecionando o elemento com o ID "mensagem" e alterando seu
+                conteúdo de texto para "Você clicou no botão!".
+                <br />
+                Isso demonstra como você pode usar o DOM para interagir com
+                elementos HTML e responder a eventos do usuário.
+            </p>
+            <br />
+            <p><strong>Resumo:</strong></p>
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Método</th>
+                        <th>Descrição</th>
+                        <th>Retorno</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>getElementById(id)</td>
+                        <td>Seleciona um elemento pelo ID</td>
+                        <td>Elemento único</td>
+                    </tr>
+                    <tr>
+                        <td>getElementsByClassName(classe)</td>
+                        <td>Seleciona todos os elementos com uma classe</td>
+                        <td>HTMLCollection</td>
+                    </tr>
+                    <tr>
+                        <td>getElementsByTagName(tag)</td>
+                        <td>Seleciona elementos por nome de tag</td>
+                        <td>HTMLCollection</td>
+                    </tr>
+                    <tr>
+                        <td>querySelector(seletor)</td>
+                        <td>
+                            Seleciona o primeiro elemento que corresponde ao
+                            seletor CSS
+                        </td>
+                        <td>Elemento único</td>
+                    </tr>
+                    <tr>
+                        <td>querySelectorAll(seletor)</td>
+                        <td>
+                            Seleciona todos os elementos que correspondem ao
+                            seletor CSS
+                        </td>
+                        <td>NodeList</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+        </section>
+        <div class="quiz">
+            <h2>Quiz</h2>
+            <div class="question" data-correct="c">
+                <p>1. O que é o DOM?</p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="a" />
+                            A) Um tipo de variável
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="b" />
+                            B) Um arquivo CSS
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q1" value="c" />
+                            C) Uma representação da estrutura da página em
+                            árvore
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="b">
+                <p>2. Qual comando retorna um elemento com id="titulo"?</p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="a" />
+                            A) document.getElement("titulo")
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="b" />
+                            B) document.querySelector("#titulo")
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q2" value="c" />
+                            C) querySelector("titulo")
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="a">
+                <p>3. Qual a diferença entre innerText e innerHTML?</p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="a" />
+                            A) innerText altera só texto, innerHTML pode incluir
+                            tags
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="b" />
+                            B) Ambos são iguais
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q3" value="c" />
+                            C) innerText é mais lento
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div class="question" data-correct="b">
+                <p>
+                    4. O que o código document.querySelector(".btn") seleciona?
+                </p>
+                <ul class="options">
+                    <li>
+                        <label>
+                            <input type="radio" name="q4" value="a" />
+                            A) Um botão chamado .btn
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q4" value="b" />
+                            B) Um elemento com classe "btn"
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            <input type="radio" name="q4" value="c" />
+                            C) Um elemento com ID "btn"
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <button class="btn-submit" type="button">Enviar Quiz</button>
+            <button class="btn-next">
+                <a href="./modulo9.html" rel="noopener noreferrer">Próximo</a>
+            </button>
+            <div class="quiz-result"></div>
+        </div>
     </body>
+    <footer>
+        <p>
+            &copy; 2025 Curso Iniciando na Programação. Todos os direitos
+            reservados.
+        </p>
+        <p>Desenvolvido por [Nome Do Grupo]</p>
+    </footer>
 </html>
