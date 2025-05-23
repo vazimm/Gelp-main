@@ -24,9 +24,461 @@
             </nav>
         </header>
         <section class="intro">
-            <h1>Eventos e funções no JavaScript</h1>
+            <h1>Módulo 9: Eventos e funções no JavaScript</h1>
             <br />
-            <h3></h3>
+            <h1>Eventos</h1>
+            <br />
+            <h3>O que são eventos?</h3>
+            <br />
+            <p>
+                <strong>Eventos</strong> são ações ou ocorrências que acontecem
+                na página web, geralmente iniciadas por um usuário ou pelo
+                navegador. O JavaScript permite que você "escuta" esses eventos
+                e executa um bloco de código (uma função) como resposta. <br />
+                <br />
+                <strong>Exemplos de eventos comuns:</strong><br /><br />
+                <strong>Interações do usuário:</strong>
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        Clicar em um botão
+                        <span class="code-custom">(click)</span>
+                    </li>
+                    <li>
+                        Passar o mouse sobre um elemento
+                        <span class="code-custom">(mouseover)</span>
+                    </li>
+                    <li>
+                        Retirar o mouse de um elemento
+                        <span class="code-custom">(mouseout)</span>
+                    </li>
+                    <li>
+                        Pressionar uma tecla
+                        <span class="code-custom"
+                            >(keydown, keypress, keyup)</span
+                        >
+                    </li>
+                    <li>
+                        Mudar o valor de um campo de formulário
+                        <span class="code-custom">(change)</span>
+                    </li>
+                    <li>
+                        Enviar um formulário
+                        <span class="code-custom">(submit)</span>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p><strong>Eventos do navegador:</strong></p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        Carregamento completo da página ou de um recurso
+                        <span class="code-custom">(load)</span>
+                    </li>
+                    <li>
+                        Redimensionar a janela
+                        <span class="code-custom">(resize)</span>
+                    </li>
+                    <li>
+                        Rolagem da página
+                        <span class="code-custom">(scroll)</span>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <h3>Tipos de eventos e suas aplicaçoes</h3>
+            <br />
+            <p><span class="code-custom">Irei resumir e adicionar dps</span></p>
+            <br />
+            <h1>Formas de Implementação de eventos</h1>
+            <br />
+            <p>
+                Existem várias maneiras de adicionar eventos em JavaScript. É
+                crucial entender cada uma, mas também saber qual é a mais
+                recomendada.
+            </p>
+            <br />
+            <h3>
+                1. Diretamente no HTML (Atributos
+                <span class="code-custom">on*</span>)
+            </h3>
+            <br />
+            <p>
+                Esta é a forma mais antiga e não recomendada para a maioria dos
+                casos, mas é útil para entender o conceito básico. O evento é
+                adicionado como um atributo HTML, cujo valor é o código
+                JavaScript a ser executado.
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    &lt;button onclick="saudar()"&gt;Clique aqui!&lt;/button&gt;
+                    <br />
+                    &lt;input type="text" onchange="console.log(this.value)"&gt;
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Vantagens:</strong> Simples para eventos muito pequenos
+                e pontuais
+            </p>
+            <p><strong>Desvantagens:</strong> por que não é recomendado</p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        Mistura HTML com JavaScript: Dificulta a manutenção e
+                        legibilidade do código. Idealmente, HTML deve cuidar da
+                        estrutura e JavaScript da lógica.
+                    </li>
+                    <li>
+                        Difícil de gerenciar: Se você tiver muitos elementos ou
+                        precisar adicionar múltiplos event listeners ao mesmo
+                        elemento, o HTML fica poluído.
+                    </li>
+                    <li>
+                        Escopo global implícito: O código dentro do atributo é
+                        executado no escopo global.
+                    </li>
+                    <li>
+                        Remoção de eventos: É mais difícil remover ou modificar
+                        o evento dinamicamente.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <h3>
+                2. Através do DOM com JavaScript (Proriedades
+                <span class="code-custom">on*</span>)
+            </h3>
+            <br />
+            <p>
+                Nesta abordagem, você seleciona o elemento HTML no JavaScript e
+                atribui uma função à sua propriedade de evento correspondente
+                (ex: <span class="code-custom">onclick, onmouseover</span>).
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    &lt;button id="meuBotao">Clique em Mim!&lt;/button> <br />
+                    &lt;script> <br />
+                    &nbsp;&nbsp;const meuBotao =
+                    document.getElementById("meuBotao"); <br />
+                    <br />
+                    &nbsp;&nbsp;// Atribui uma função ao evento click <br />
+                    &nbsp;&nbsp;meuBotao.onclick = function() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert("Você clicou no botão!");
+                    <br />
+                    &nbsp;&nbsp;}; <br />
+
+                    &nbsp;&nbsp;// Você também pode atribuir uma função nomeada
+                    <br />
+                    &nbsp;&nbsp;function lidarComHover() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("Mouse sobre o botão!");
+                    <br />
+                    &nbsp;&nbsp;} <br />
+                    &nbsp;&nbsp;meuBotao.onmouseover = lidarComHover; <br />
+                    <br />
+                    &nbsp;&nbsp;// AVISO: Apenas uma função pode ser atribuída
+                    por evento. <br />
+                    &nbsp;&nbsp;// Se você tentar adicionar outro: <br />
+                    &nbsp;&nbsp;meuBotao.onclick = function() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log("Este será o único
+                    evento de clique!"); <br />
+                    &nbsp;&nbsp;}; <br />
+                    &nbsp;&nbsp;// A função anterior (alert) será sobrescrita!
+                    <br />
+                    &lt;/script>
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Vantagens:</strong>
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>Separa o HTML do JavaScript.</li>
+                    <li>Permite a manipulação de eventos dinamicamente.</li>
+                    <li>
+                        Escopo local: O código dentro do evento é executado no
+                        escopo do elemento.
+                    </li>
+                    <li>
+                        Remoção de eventos: Você pode facilmente remover ou
+                        modificar o evento dinamicamente.
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>
+                <strong>Desvantagens:</strong> Só permite um event handler por
+                evento: Como mostrado no exemplo, se você atribuir uma nova
+                função ao <span class="code-custom">onclick</span>, a função
+                anterior é substituída. Isso é uma grande limitação para
+                aplicações complexas.
+            </p>
+            <br />
+            <h3>
+                3. Usando
+                <span class="code-custom">addEventListener()</span> (A forma
+                mais recomendada)
+            </h3>
+            <br />
+            <p>
+                O método <span class="code-custom">addEventListener()</span> é a
+                maneira padrão e mais poderosa de registrar event handlers no
+                DOM. Ele permite que você adicione múltiplos event listeners do
+                mesmo tipo a um único elemento, sem sobrescrever os anteriores.
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    &lt;button id=&quot;meuBotaoModerno&quot;&gt;Clique
+                    Múltiplo&lt;/button&gt; <br />&lt;script&gt;<br />
+                    &nbsp;&nbsp;const meuBotaoModerno =
+                    document.getElementById(&quot;meuBotaoModerno&quot;); <br />
+                    <br />
+                    &nbsp;&nbsp;// Adiciona o primeiro event listener de clique
+                    <br />
+                    &nbsp;&nbsp;meuBotaoModerno.addEventListener(&quot;click&quot;,
+                    function() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;alert(&quot;Primeiro clique!&quot;);
+                    <br />
+                    &nbsp;&nbsp;}); <br /><br />
+                    &nbsp;&nbsp;// Adiciona o segundo event listener de clique
+                    (ambos serão executados) <br />
+                    &nbsp;&nbsp;meuBotaoModerno.addEventListener(&quot;click&quot;,
+                    function() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;console.log(&quot;Segundo
+                    clique!&quot;); <br />
+                    &nbsp;&nbsp;}); <br />
+                    <br />
+                    &nbsp;&nbsp;// Adiciona um event listener de mouseover
+                    <br />
+                    &nbsp;&nbsp;meuBotaoModerno.addEventListener(&quot;mouseover&quot;,
+                    function() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor =
+                    'yellow'; }); <br />
+                    &nbsp;&nbsp;// 'this' refere-se ao elemento que disparou o
+                    evento <br />
+                    <br />
+                    &nbsp;&nbsp;// Para remover um event listener, voc&ecirc;
+                    precisa da refer&ecirc;ncia da fun&ccedil;&atilde;o nomeada
+                    <br />
+                    &nbsp;&nbsp;function handleMouseOut() { <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;this.style.backgroundColor = '';
+                    <br />
+                    &nbsp;&nbsp;} <br />
+                    &nbsp;&nbsp;meuBotaoModerno.addEventListener(&quot;mouseout&quot;,
+                    handleMouseOut);<br />
+                    <br />
+                    &nbsp;&nbsp;// Para remover: <br />
+                    &nbsp;&nbsp;//meuBotaoModerno.removeEventListener(&quot;mouseout&quot;,
+                    handleMouseOut); <br />
+                    &lt;/script&gt;
+                </code>
+            </div>
+            <br />
+            <br />
+            <p>
+                Sintaxe de <span class="code-custom">addEventListener():</span>
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    elemento.addEventListener(evento, func&ccedil;&atilde;o,
+                    op&ccedil;&atilde;o);
+                </code>
+            </div>
+            <br />
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        <strong>evento</strong>: Uma string que especifica o
+                        tipo de evento, ex:
+                        <span class="code-custom"
+                            >"click", "mouseover", "submit"</span
+                        >. (Note que não se usa "on")
+                    </li>
+                    <li>
+                        <strong>funcao</strong>: A função a ser executada quando
+                        o evento ocorre.
+                    </li>
+                    <li>
+                        <strong>opcoes</strong> (opcional): Um objeto que pode
+                        conter as seguintes propriedades:
+                        <ul>
+                            <li>
+                                <strong>capture</strong>: Um booleano que indica
+                                se o evento deve ser capturado na fase de
+                                captura (true) ou na fase de borbulhamento
+                                (false, padrão).
+                            </li>
+                            <li>
+                                <strong>once</strong>: Um booleano que indica
+                                que o listener deve ser invocado no máximo uma
+                                vez. Se true, o listener é automaticamente
+                                removido após ser invocado.
+                            </li>
+                            <li>
+                                <strong>passive</strong>: Um booleano que indica
+                                que a função listener nunca chamará
+                                preventDefault(), o que é útil para melhorar o
+                                desempenho de rolagem em dispositivos móveis.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <p>
+                <strong>Vantagens:</strong>
+            </p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        <strong>Permite múltiplos handlers:</strong> Várias
+                        funções podem responder ao mesmo evento em um elemento.
+                    </li>
+                    <li>
+                        <strong>Separação de responsabilidades:</strong> Mantém
+                        o HTML limpo e focado na estrutura.
+                    </li>
+                    <li>
+                        <strong>Controle sobre a fase do evento:</strong>
+                        Permite especificar se o handler deve ser ativado na
+                        fase de captura ou de borbulhamento.
+                    </li>
+                    <li>
+                        <strong>Facilidade de remoção:</strong> O método
+                        removeEventListener() permite remover handlers
+                        específicos.
+                    </li>
+                    <li>
+                        <strong>Flexibilidade:</strong> Pode ser usado para
+                        anexar eventos a qualquer objeto que suporte eventos
+                        (documento, janela, elementos do DOM).
+                    </li>
+                </ul>
+            </div>
+            <br />
+            <h3>
+                4. Diferença entre
+                <span class="code-custom">addEventListener</span> e Atributos
+                HTML (<span class="code-custom">on*</span>) / Propriedades DOM
+                (<span class="code-custom">on*</span>)
+            </h3>
+            <br />
+            <table class="grid-explanation-table">
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Atributo HTML (onclick="...")</th>
+                        <th>Propriedade DOM (elemento.onclick = ...)</th>
+                        <th>addEventListener()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Localização</td>
+                        <td>No HTML</td>
+                        <td>No JavaScript</td>
+                        <td>No JavaScript</td>
+                    </tr>
+                    <tr>
+                        <td>Número de Handlers</td>
+                        <td>Um por evento</td>
+                        <td>Um por evento (sobrescreve)</td>
+                        <td>Múltiplos por evento</td>
+                    </tr>
+                    <tr>
+                        <td>Separação de Código</td>
+                        <td>Não (mistura HTML e JS)</td>
+                        <td>Sim (HTML e JS separados)</td>
+                        <td>Sim (HTML e JS separados)</td>
+                    </tr>
+                    <tr>
+                        <td>Remoção de Evento</td>
+                        <td>Difícil (requer manipulação do atributo)</td>
+                        <td>Fácil (atribuir null)</td>
+                        <td>Fácil (com removeEventListener)</td>
+                    </tr>
+                    <tr>
+                        <td>Fase de Evento</td>
+                        <td>Apenas Borbulhamento</td>
+                        <td>Apenas Borbulhamento</td>
+                        <td>Borbulhamento ou Captura</td>
+                    </tr>
+                    <tr>
+                        <td>Recomendação</td>
+                        <td>Não recomendado</td>
+                        <td>Não recomendado para múltiplos handlers</td>
+                        <td>Altamente recomendado</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <p>
+                <strong>Conclusão: </strong>Sempre prefira
+                <span class="code-custom">addEventListener()</span> para lidar
+                com eventos em JavaScript, a menos que você tenha um motivo
+                muito específico e raro para não fazê-lo.
+            </p>
+            <br />
+            <h1>Funções</h1>
+            <br />
+            <h3>Criação de Funções com e sem Parâmetros</h3>
+            <br />
+            <p>
+                Funções são blocos de código reutilizáveis que podem ser
+                executados sob demanda. Elas são essenciais para organizar o
+                código e torná-lo modular.
+                <br /><br />
+                <strong>Função Simples (sem parâmetros)</strong>: Uma função sem
+                parâmetros não precisa de informações externas para executar sua
+                tarefa. <br /><br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    // Declaração de uma função simples<br />
+                    function saudar() {<br />
+                    &nbsp;&nbsp;alert("Olá! Bem-vindo(a) ao nosso site.");<br />
+                    }<br /><br />
+                    // Como chamar a função<br />
+                    // saudar(); // Isso faria o alert aparecer imediatamente se
+                    fosse chamado no escopo global<br /><br />
+                    // Exemplo com evento // Isso fará o alert aparecer quando o
+                    botão for clicado<br />
+                    document.getElementById("botaoSaudacao").addEventListener("click",
+                    saudar);
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Função com Parâmetro(s)</strong>: Funções com parâmetros
+                permitem que você passe valores para dentro da função,
+                tornando-a mais flexível e reutilizável. <br /><br />
+                <strong>Exemplo:</strong>
+            </p>
+            <div class="code-box code-centered">
+                <code>
+                    // Declaração de uma função com um parâmetro 'mensagem'
+                    <br />
+                    function exibirMensagem(mensagem) {<br />
+                    &nbsp;&nbsp;console.log(mensagem);<br />
+                    &nbsp;&nbsp;alert(mensagem);<br />
+                    }<br />
+                    <br />
+                    // Declaração de uma função com múltiplos parâmetros<br />
+                    function somar(a, b) {<br />
+                    &nbsp;&nbsp;let resultado = a + b;<br />
+                    &nbsp;&nbsp;console.log("A soma é: " + resultado);<br />
+                    &nbsp;&nbsp;return resultado; // Funções podem retornar
+                    valores<br />
+                    }<br />
+                </code>
+            </div>
         </section>
     </body>
     <footer>
