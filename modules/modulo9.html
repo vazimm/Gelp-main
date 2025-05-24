@@ -479,6 +479,108 @@
                     }<br />
                 </code>
             </div>
+            <br />
+            <h3>Escopo de Função</h3>
+            <br />
+            <p>
+                O escopo refere-se à acessibilidade das variáveis, funções e
+                objetos em diferentes partes do seu código. Em JavaScript, o
+                escopo é fundamental para evitar conflitos de nomes e gerenciar
+                o ciclo de vida das variáveis. <br />
+                <br />
+                <strong>Escopo Global </strong> <br />Variáveis declaradas fora
+                de qualquer função são consideradas no escopo global. Elas podem
+                ser acessadas de qualquer lugar no seu script, incluindo dentro
+                de funções.
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    let nomeGlobal = "Alice"; // Variável no escopo global
+                    <br /><br />
+
+                    function mostrarNomeGlobal() { <br />
+                    &nbsp;&nbsp;console.log(nomeGlobal); // Acessa a variável
+                    global <br />
+                    } <br />
+                    <br />
+
+                    mostrarNomeGlobal(); // Saída: "Alice"<br />
+                    console.log(nomeGlobal); // Saída: "Alice"
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Escopo de Função (Local)</strong> <br />
+                Variáveis declaradas <strong>dentro de uma função</strong> estão
+                no <strong>escopo de função (ou local).</strong> Elas só podem
+                ser acessadas de dentro da própria função onde foram declaradas.
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    function saudacaoComNome(nome) {<br />
+                    &nbsp;&nbsp;let mensagemLocal = "Olá, " + nome + "!"; //
+                    Variável no escopo de função <br />
+                    &nbsp;&nbsp;console.log(mensagemLocal); <br />
+                    } <br />
+
+                    saudacaoComNome("Bob"); // Saída: "Olá, Bob!" <br />
+
+                    // console.log(mensagemLocal); <br />
+                    // Erro: mensagemLocal is not defined (não pode ser acessada
+                    de fora da função)
+                </code>
+            </div>
+            <br />
+            <p>
+                <strong>Escopo de Bloco </strong>(<span class="code-custom"
+                    >let</span
+                >
+                e <span class="code-custom">const</span>) <br />
+                Com a introdução de let e const no ES6 (ECMAScript 2015), o
+                JavaScript ganhou o conceito de escopo de bloco. Isso significa
+                que variáveis declaradas com let ou const dentro de um bloco de
+                código (delimitado por {}) só são acessíveis dentro daquele
+                bloco. Variáveis declaradas com var não respeitam o escopo de
+                bloco.
+            </p>
+            <br />
+            <div class="code-box code-centered">
+                <code>
+                    if (true) {<br />
+                    &nbsp;&nbsp;let blocoLet = "Sou visível apenas dentro deste
+                    bloco 'if'"; <br />
+                    &nbsp;&nbsp;const blocoConst = "Também só aqui"; <br />
+                    &nbsp;&nbsp;var blocoVar = "Eu vazo para o escopo da função
+                    ou global"; // Cuidado com var!<br />
+                    &nbsp;&nbsp;console.log(blocoLet);<br />
+                    }<br />
+
+                    // console.log(blocoLet); // Erro: blocoLet is not
+                    defined<br />
+                    // console.log(blocoConst); // Erro: blocoConst is not
+                    defined<br />
+                    console.log(blocoVar); <br />
+                    // Saída: "Eu vazo para o escopo da função ou global" (se
+                    estiver no escopo global ou de função)<br />
+                </code>
+            </div>
+            <br />
+            <p><strong>Melhor Prática de Escopo:</strong></p>
+            <div class="explanation-box">
+                <ul class="explanation">
+                    <li>
+                        Sempre use let ou const em vez de var para declarar
+                        variáveis. Isso ajuda a evitar problemas de escopo e
+                        torna o código mais previsível.
+                    </li>
+                    <li>
+                        Mantenha as variáveis no escopo mais restrito possível
+                        (primeiro local, depois global se realmente necessário)
+                    </li>
+                </ul>
+            </div>
         </section>
     </body>
     <footer>
